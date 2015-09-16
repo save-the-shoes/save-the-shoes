@@ -14,11 +14,11 @@
 		<string>github.com:save-the-shoes/save-the-shoes.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SaveTheShoes/ios/SaveTheShoes.xcodeproj</string>
+	<string>ios/SaveTheShoes.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0BC53CAF9E7D2C20C18D98AEDF485826656A6E20</key>
-		<string>../../../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:save-the-shoes/save-the-shoes.git</string>
