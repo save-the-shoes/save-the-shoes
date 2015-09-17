@@ -125,10 +125,16 @@ var SaveTheShoes = React.createClass({
       return;
     }
 
-    var timeInSeconds = this.pressure().minutesOfAir * 60 * 1000;
-    this.setTimeout(() => this.setState({timerRunning: false}), timeInSeconds);
+    var timeInMilliseconds = this.pressure().minutesOfAir * 60 * 1000;
+    this.setTimeout(() => this.setState({timerRunning: false}), timeInMilliseconds);
 
     this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
+    this.setState({timeRemaining: Moment().add(this.pressure().minutesOfAir)});
+    this.setInterval(this.decrementTimer, 1000);
+  },
+
+  decrementTimer: function() {
+    this.setState({timeRemaining: this.state.timeRemaining.subtract(1, 'second')});
   },
 
   getInitialState: function() {
@@ -136,7 +142,8 @@ var SaveTheShoes = React.createClass({
       barPressure: '110',
       minutes: 15,
       timerRunning: false,
-      inTime: null
+      inTime: null,
+      timeRemaining: Moment()
     };
   },
 
@@ -188,7 +195,7 @@ var SaveTheShoes = React.createClass({
         <Text>{selectedBar}bar</Text>
         <Text>{minutesOfAir}minutes air</Text>
 
-        <CountDownBox time={Moment()}></CountDownBox>
+        <CountDownBox time={this.state.timeRemaining}></CountDownBox>
         {this.timesRunning(pressure)}
 
         <TouchableHighlight style={styles.buttonContainer} onPress={this.startTimer}>
@@ -217,7 +224,7 @@ var CountDownBox = React.createClass({
     return (
         <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
         <View><Text style={{textAlign: 'center'}}>Time Remaining</Text></View>
-        <View><Text style={{textAlign: 'center', fontSize: 34}}>{this.props.time.format('mm′:ss′′')}</Text></View>
+        <View><Text style={{textAlign: 'center', fontSize: 34}}>{this.props.time.seconds()}′</Text></View>
         </View>
         );
   }
