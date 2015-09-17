@@ -6,7 +6,8 @@ var {
   PickerIOS,
   Text,
   View,
-  TouchableHighlight
+  TouchableHighlight,
+  AlertIOS
 } = React;
 
 
@@ -97,7 +98,18 @@ var PRESSURES_AND_MINUTES = {
 
 var SaveTheShoes = React.createClass({
   startTimer: function () {
-    this.setState({timerRunning: !this.state.timerRunning});
+    if (this.state.timerRunning) {
+     AlertIOS.alert(
+      'Stop the timer?',
+      'Are you sure you want to stop the timer?', [
+        {text: 'Yes', onPress: () => this.setState({timerRunning: false})},
+        {text: 'No', onPress: () => this.setState({timerRunning: true})},
+      ])
+
+       return;
+    }
+
+    this.setState({timerRunning: true});
   },
 
   getInitialState: function() {
