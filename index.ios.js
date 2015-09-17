@@ -1,6 +1,8 @@
 'use strict';
 
 var React = require('react-native');
+var Moment = require('moment');
+
 var {
   AppRegistry,
   PickerIOS,
@@ -109,27 +111,35 @@ var SaveTheShoes = React.createClass({
        return;
     }
 
-    this.setState({timerRunning: true});
+    this.setState({timerRunning: true, inTime: Moment()});
   },
 
   getInitialState: function() {
     return {
       barPressure: '110',
-      minutes: 0,
-      timerRunning: false
+      minutes: 15,
+      timerRunning: false,
+      inTime: Moment()
     };
   },
 
   render: function() {
     var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
     var selectionString = pressure.bar + ' bar which is about ' + pressure.minutes + ' minutes of air. ';
+
+    var inTime = Moment(this.state.inTime); //.format('MMMM Do YYYY, h:mm:ss a');
+    var outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
+
+    var reliefAssemblyTime = Moment(outTime).subtract(15, 'minutes');
+    var reliefInTime = Moment(outTime).subtract(10, 'minutes');
+
     return (
       <View style={[styles.background, styles.base]}>
         <Text></Text>
         <Text>Enter Cylinder Pressure: </Text>
         <PickerIOS
           selectedValue={this.state.barPressure}
-          onValueChange={(barPressure) => this.setState({barPressure, minutes: 0})}>
+          onValueChange={(barPressure) => this.setState({barPressure})}>
           {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
             <PickerItemIOS
               key={barPressure}
@@ -140,6 +150,10 @@ var SaveTheShoes = React.createClass({
           )}
         </PickerIOS>
         <Text>You selected: {selectionString}</Text>
+        <Text>Time in: {inTime.format('HH:mm')}</Text>
+        <Text>Relief Assembly: {reliefAssemblyTime.format('HH:mm')}</Text>
+        <Text>Relief In: {reliefInTime.format('HH:mm')}</Text>
+        <Text>Time out: {outTime.format('HH:mm')}</Text>
 
         <TouchableHighlight style={styles.buttonContainer} onPress={this.startTimer}>
           <Text style={styles.button}>
