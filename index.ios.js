@@ -143,7 +143,7 @@ var SaveTheShoes = React.createClass({
           <Text>Time In: {inTime.format('HH:mm')}</Text>
           <Text>Relief Assembly: {reliefAssemblyTime.format('HH:mm')}</Text>
           <Text>Relief In: {reliefInTime.format('HH:mm')}</Text>
-          <Text>Time Out: {outTime.format('HH:mm')}</Text>
+          <Text>Time Due Out: {outTime.format('HH:mm')}</Text>
           </Text>
           );
     } else {
