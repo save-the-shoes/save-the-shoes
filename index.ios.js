@@ -102,7 +102,18 @@ var PRESSURES_AND_MINUTES = {
 
 var SaveTheShoes = React.createClass({
   mixins: [TimerMixin],
-  startTimer: function () {
+
+  pressure: function() {
+    var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
+
+    return {
+      pressureData: pressure,
+      selectedBar: pressure.bar,
+      minutesOfAir: pressure.minutes
+    };
+  },
+
+  startTimer: function() {
     if (this.state.timerRunning) {
      AlertIOS.alert(
       'Stop the timer?',
@@ -114,7 +125,8 @@ var SaveTheShoes = React.createClass({
        return;
     }
 
-    this.setTimeout(() => this.setState({timerRunning: false}), 3000);
+    var timeInSeconds = this.pressure().minutesOfAir * 60 * 1000;
+    this.setTimeout(() => this.setState({timerRunning: false}), timeInSeconds);
 
     this.setState({timerRunning: true, inTime: Moment()});
   },
@@ -152,9 +164,9 @@ var SaveTheShoes = React.createClass({
   },
 
   render: function() {
-    var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
-    var selectedBar = pressure.bar
-    var minutesOfAir =  pressure.minutes
+    var pressure = this.pressure().pressureData;
+    var selectedBar = this.pressure().selectedBar;
+    var minutesOfAir =  this.pressure().minutesOfAir;
 
     return (
         <View style={[styles.background, styles.base,]}>
@@ -194,7 +206,7 @@ var styles = ({
   base: {
     padding: 20,
   },
-  
+
   background: {
     backgroundColor: '#EFEFEF',
   },
@@ -209,6 +221,6 @@ var styles = ({
     justifyContent: 'center',
     alignItems: 'center'
   }
-  
+
 
 });
