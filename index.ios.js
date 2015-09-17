@@ -113,6 +113,10 @@ var SaveTheShoes = React.createClass({
     };
   },
 
+  componentDidMount () {
+    this.setInterval(this.decrementTimer, 1000);
+  },
+
   startTimer: function () {
     if (false && this.state.timerRunning) {
       AlertIOS.alert(
@@ -132,7 +136,6 @@ var SaveTheShoes = React.createClass({
 
     var timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes;
     this.setState({timeRemaining: Moment.duration(parseInt(timeInMinutes, 10), 'minutes')});
-    this.setInterval(this.decrementTimer, 1000);
   },
 
   decrementTimer: function() {
