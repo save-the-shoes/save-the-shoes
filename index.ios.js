@@ -129,12 +129,16 @@ var SaveTheShoes = React.createClass({
     this.setTimeout(() => this.setState({timerRunning: false}), timeInMilliseconds);
 
     this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
-    this.setState({timeRemaining: Moment().add(this.pressure().minutesOfAir)});
+
+    var timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes;
+    this.setState({timeRemaining: Moment.duration(parseInt(timeInMinutes, 10), 'minutes')});
     this.setInterval(this.decrementTimer, 1000);
   },
 
   decrementTimer: function() {
-    this.setState({timeRemaining: this.state.timeRemaining.subtract(1, 'second')});
+    if(this.state.timerRunning) {
+      this.setState({timeRemaining: this.state.timeRemaining.subtract(1, 'second')});
+    }
   },
 
   getInitialState: function() {
@@ -143,7 +147,7 @@ var SaveTheShoes = React.createClass({
       minutes: 15,
       timerRunning: false,
       inTime: null,
-      timeRemaining: Moment()
+      timeRemaining: Moment.duration(0)
     };
   },
 
@@ -225,7 +229,7 @@ var CountDownBox = React.createClass({
     return (
         <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
         <View><Text style={{textAlign: 'center'}}>Time Remaining</Text></View>
-        <View><Text style={{textAlign: 'center', fontSize: 34}}>{this.props.time.seconds()}′</Text></View>
+        <View><Text style={{textAlign: 'center', fontSize: 34}}>{this.props.time.minutes()}′{this.props.time.seconds()}′′</Text></View>
         </View>
         );
   }
