@@ -107,7 +107,7 @@ var SaveTheShoes = React.createClass({
     return (
       <View>
         <Text></Text>
-        <Text>Enter your tank BA</Text>
+        <Text>Enter Cylinder Pressure: </Text>
         <PickerIOS
           selectedValue={this.state.barPressure}
           onValueChange={(barPressure) => this.setState({barPressure, minutes: 0})}>
