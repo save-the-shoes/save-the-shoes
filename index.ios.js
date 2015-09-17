@@ -10,7 +10,7 @@ var {
 
 var PickerItemIOS = PickerIOS.Item;
 
-var CAR_MAKES_AND_MODELS = {
+var PRESSURES_AND_MINUTES = {
   '300': {
     bar: '300',
     minutes: '51',
@@ -96,26 +96,26 @@ var CAR_MAKES_AND_MODELS = {
 var SaveTheShoes = React.createClass({
   getInitialState: function() {
     return {
-      carMake: '300',
+      barPressure: '300',
       minutes: 0,
     };
   },
 
   render: function() {
-    var make = CAR_MAKES_AND_MODELS[this.state.carMake];
-    var selectionString = make.bar + ' bar which gives ' + make.minutes + ' minutes.';
+    var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
+    var selectionString = pressure.bar + ' bar which gives ' + pressure.minutes + ' minutes.';
     return (
       <View>
         <Text></Text>
         <Text>Enter your tank BA</Text>
         <PickerIOS
-          selectedValue={this.state.carMake}
-          onValueChange={(carMake) => this.setState({carMake, minutes: 0})}>
-          {Object.keys(CAR_MAKES_AND_MODELS).map((carMake) => (
+          selectedValue={this.state.barPressure}
+          onValueChange={(barPressure) => this.setState({barPressure, minutes: 0})}>
+          {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
             <PickerItemIOS
-              key={carMake}
-              value={carMake}
-              label={CAR_MAKES_AND_MODELS[carMake].bar}
+              key={barPressure}
+              value={barPressure}
+              label={PRESSURES_AND_MINUTES[barPressure].bar}
               />
             )
           )}
