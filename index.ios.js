@@ -107,7 +107,7 @@ var SaveTheShoes = React.createClass({
     var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
 
     return {
-      pressure: pressure,
+      pressureData: pressure,
       selectedBar: pressure.bar,
       minutesOfAir: pressure.minutes
     };
@@ -164,9 +164,9 @@ var SaveTheShoes = React.createClass({
   },
 
   render: function() {
-    var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
-    var selectedBar = pressure.bar
-    var minutesOfAir =  pressure.minutes
+    var pressure = this.pressure().pressureData;
+    var selectedBar = this.pressure().selectedBar;
+    var minutesOfAir =  this.pressure().minutesOfAir;
 
     return (
         <View style={[styles.background, styles.base,]}>
@@ -206,7 +206,7 @@ var styles = ({
   base: {
     padding: 20,
   },
-  
+
   background: {
     backgroundColor: '#EFEFEF',
   },
@@ -221,6 +221,6 @@ var styles = ({
     justifyContent: 'center',
     alignItems: 'center'
   }
-  
+
 
 });
