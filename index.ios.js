@@ -113,22 +113,22 @@ var SaveTheShoes = React.createClass({
     };
   },
 
-  startTimer: function() {
-    if (this.state.timerRunning) {
-     AlertIOS.alert(
-      'Stop the timer?',
-      'Are you sure you want to stop the timer?', [
-        {text: 'Yes', onPress: () => this.setState({timerRunning: false})},
-        {text: 'No'}
-      ])
+  startTimer: function () {
+    if (false && this.state.timerRunning) {
+      AlertIOS.alert(
+          'Stop the timer?',
+          'Are you sure you want to stop the timer?', [
+          {text: 'Yes', onPress: () => this.setState({timerRunning: false})},
+          {text: 'No', onPress: () => this.setState({timerRunning: true})},
+          ]);
 
-       return;
+      return;
     }
 
     var timeInSeconds = this.pressure().minutesOfAir * 60 * 1000;
     this.setTimeout(() => this.setState({timerRunning: false}), timeInSeconds);
 
-    this.setState({timerRunning: true, inTime: Moment()});
+    this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
   },
 
   getInitialState: function() {
@@ -151,15 +151,15 @@ var SaveTheShoes = React.createClass({
 
     if(this.state.timerRunning) {
       return (
-          <Text>
-          <Text>Time In: {inTime.format('HH:mm')}</Text>
-          <Text>Relief Assembly: {reliefAssemblyTime.format('HH:mm')}</Text>
-          <Text>Relief In: {reliefInTime.format('HH:mm')}</Text>
-          <Text>Time Out: {outTime.format('HH:mm')}</Text>
-          </Text>
+          <View>
+          <TimeBox time={inTime} title="Time In"></TimeBox>
+          <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
+          <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
+          <TimeBox time={outTime} title="Time Out"></TimeBox>
+          </View>
           );
     } else {
-      return (<Text>Nothing to see here</Text>);
+      return (<View></View>);
     }
   },
 
@@ -173,16 +173,16 @@ var SaveTheShoes = React.createClass({
         <Text ></Text>
         <Text style={{fontWeight: 'bold',  textAlign: 'center', fontSize: 18}}>Enter Cylinder Pressure </Text>
         <PickerIOS
-          selectedValue={this.state.barPressure}
-          onValueChange={(barPressure) => this.setState({barPressure})}>
-          {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
-            <PickerItemIOS
+        selectedValue={this.state.barPressure}
+        onValueChange={(barPressure) => this.setState({barPressure})}>
+        {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
+              <PickerItemIOS
               key={barPressure}
               value={barPressure}
               label={PRESSURES_AND_MINUTES[barPressure].bar}
               />
-            )
-          )}
+              )
+            )}
         </PickerIOS>
 
         <Text>{selectedBar}bar</Text>
@@ -192,15 +192,28 @@ var SaveTheShoes = React.createClass({
 
         <TouchableHighlight style={styles.buttonContainer} onPress={this.startTimer}>
           <Text style={styles.button}>
-            {this.state.timerRunning ? 'Stop' : 'Go!'}
-          </Text>
-        </TouchableHighlight>
-      </View>
-    );
+          {this.state.timerRunning ? 'Stop' : 'Go!'}
+        </Text>
+          </TouchableHighlight>
+          </View>
+          );
   },
 });
 
+
+var TimeBox = React.createClass({
+  render: function() {
+    return (
+        <View>
+        <View><Text>{this.props.title}</Text></View>
+        <View><Text>{this.props.time.format('HH:mm')}</Text></View>
+        </View>
+        );
+  }
+});
+
 AppRegistry.registerComponent('SaveTheShoes', () => SaveTheShoes);
+AppRegistry.registerComponent('TimeBox', () => TimeBox);
 
 var styles = ({
   base: {
@@ -221,6 +234,4 @@ var styles = ({
     justifyContent: 'center',
     alignItems: 'center'
   }
-
-
 });
