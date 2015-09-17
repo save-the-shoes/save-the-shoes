@@ -122,7 +122,7 @@ var SaveTheShoes = React.createClass({
 
   render: function() {
     var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
-    var selectionString = pressure.bar + ' bar which gives ' + pressure.minutes + ' minutes. ';
+    var selectionString = pressure.bar + ' bar which is about ' + pressure.minutes + ' minutes of air. ';
     return (
       <View style={[styles.background, styles.base]}>
         <Text></Text>
