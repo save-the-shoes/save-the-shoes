@@ -2,6 +2,7 @@
 
 var React = require('react-native');
 var Moment = require('moment');
+var TimerMixin = require('react-native-timer-mixin');
 
 var {
   AppRegistry,
@@ -9,7 +10,8 @@ var {
   Text,
   View,
   TouchableHighlight,
-  AlertIOS
+  AlertIOS,
+  PushNotificationIOS
 } = React;
 
 
@@ -99,6 +101,7 @@ var PRESSURES_AND_MINUTES = {
 };
 
 var SaveTheShoes = React.createClass({
+  mixins: [TimerMixin],
   startTimer: function () {
     if (this.state.timerRunning) {
      AlertIOS.alert(
@@ -110,6 +113,8 @@ var SaveTheShoes = React.createClass({
 
        return;
     }
+
+    this.setTimeout(() => this.setState({timerRunning: false}), 3000);
 
     this.setState({timerRunning: true, inTime: Moment()});
   },
