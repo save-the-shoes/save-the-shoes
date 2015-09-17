@@ -105,7 +105,7 @@ var SaveTheShoes = React.createClass({
       'Stop the timer?',
       'Are you sure you want to stop the timer?', [
         {text: 'Yes', onPress: () => this.setState({timerRunning: false})},
-        {text: 'No', onPress: () => this.setState({timerRunning: true})},
+        {text: 'No'}
       ])
 
        return;
@@ -119,22 +119,40 @@ var SaveTheShoes = React.createClass({
       barPressure: '110',
       minutes: 15,
       timerRunning: false,
-      inTime: Moment()
+      inTime: null
     };
+  },
+
+  timesRunning: function(pressure) {
+    if(this.state.inTime != null){
+      var inTime = Moment(this.state.inTime);
+      var outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
+
+      var reliefAssemblyTime = Moment(outTime).subtract(15, 'minutes');
+      var reliefInTime = Moment(outTime).subtract(10, 'minutes');
+    }
+
+    if(this.state.timerRunning) {
+      return (
+          <Text>
+          <Text>Time In: {inTime.format('HH:mm')}</Text>
+          <Text>Relief Assembly: {reliefAssemblyTime.format('HH:mm')}</Text>
+          <Text>Relief In: {reliefInTime.format('HH:mm')}</Text>
+          <Text>Time Out: {outTime.format('HH:mm')}</Text>
+          </Text>
+          );
+    } else {
+      return (<Text>Nothing to see here</Text>);
+    }
   },
 
   render: function() {
     var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
-    var selectionString = pressure.bar + ' bar which is about ' + pressure.minutes + ' minutes of air. ';
-
-    var inTime = Moment(this.state.inTime); //.format('MMMM Do YYYY, h:mm:ss a');
-    var outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
-
-    var reliefAssemblyTime = Moment(outTime).subtract(15, 'minutes');
-    var reliefInTime = Moment(outTime).subtract(10, 'minutes');
+    var selectedBar = pressure.bar
+    var minutesOfAir =  pressure.minutes
 
     return (
-      <View style={[styles.background, styles.base]}>
+        <View style={[styles.background, styles.base]}>
         <Text></Text>
         <Text>Enter Cylinder Pressure: </Text>
         <PickerIOS
@@ -149,11 +167,11 @@ var SaveTheShoes = React.createClass({
             )
           )}
         </PickerIOS>
-        <Text>You selected: {selectionString}</Text>
-        <Text>Time in: {inTime.format('HH:mm')}</Text>
-        <Text>Relief Assembly: {reliefAssemblyTime.format('HH:mm')}</Text>
-        <Text>Relief In: {reliefInTime.format('HH:mm')}</Text>
-        <Text>Time out: {outTime.format('HH:mm')}</Text>
+
+        <Text>{selectedBar}bar</Text>
+        <Text>{minutesOfAir}minutes air</Text>
+
+        {this.timesRunning(pressure)}
 
         <TouchableHighlight style={styles.buttonContainer} onPress={this.startTimer}>
           <Text style={styles.button}>
