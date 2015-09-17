@@ -96,7 +96,7 @@ var PRESSURES_AND_MINUTES = {
 var SaveTheShoes = React.createClass({
   getInitialState: function() {
     return {
-      barPressure: '300',
+      barPressure: '110',
       minutes: 0,
     };
   },
