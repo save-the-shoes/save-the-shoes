@@ -6,6 +6,7 @@ var {
   PickerIOS,
   Text,
   View,
+  TouchableHighlight
 } = React;
 
 
@@ -95,16 +96,21 @@ var PRESSURES_AND_MINUTES = {
 };
 
 var SaveTheShoes = React.createClass({
+  startTimer: function () {
+    this.setState({timerRunning: true});
+  },
+
   getInitialState: function() {
     return {
       barPressure: '110',
       minutes: 0,
+      timerRunning: false
     };
   },
 
   render: function() {
     var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
-    var selectionString = pressure.bar + ' bar which gives ' + pressure.minutes + ' minutes.';
+    var selectionString = pressure.bar + ' bar which gives ' + pressure.minutes + ' minutes. ' + this.state.timerRunning;
     return (
       <View style={[styles.background, styles.base]}>
         <Text></Text>
@@ -122,6 +128,10 @@ var SaveTheShoes = React.createClass({
           )}
         </PickerIOS>
         <Text>You selected: {selectionString}</Text>
+
+        <TouchableHighlight style={styles.buttonContainer} onPress={this.startTimer}>
+          <Text style={styles.button}>Go!</Text>
+        </TouchableHighlight>
       </View>
     );
   },
@@ -137,4 +147,15 @@ var styles = ({
   background: {
     backgroundColor: '#ffff99',
   },
+
+  button: {
+    color: '#007aff'
+  },
+
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 });
