@@ -155,11 +155,10 @@ AppRegistry.registerComponent('SaveTheShoes', () => SaveTheShoes);
 
 var styles = ({
   base: {
-    height: 800,
     padding: 20,
   },
   background: {
-    backgroundColor: '#ffff99',
+    backgroundColor: '#EFEFEF',
   },
 
   button: {
