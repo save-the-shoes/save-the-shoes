@@ -188,6 +188,7 @@ var SaveTheShoes = React.createClass({
         <Text>{selectedBar}bar</Text>
         <Text>{minutesOfAir}minutes air</Text>
 
+        <CountDownBox time={Moment()}></CountDownBox>
         {this.timesRunning(pressure)}
 
         <TouchableHighlight style={styles.buttonContainer} onPress={this.startTimer}>
@@ -200,13 +201,23 @@ var SaveTheShoes = React.createClass({
   },
 });
 
-
 var TimeBox = React.createClass({
   render: function() {
     return (
-        <View>
-        <View><Text>{this.props.title}</Text></View>
-        <View><Text>{this.props.time.format('HH:mm')}</Text></View>
+        <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
+        <View><Text style={{textAlign: 'center'}}>{this.props.title}</Text></View>
+        <View><Text style={{textAlign: 'center', fontSize: 24}}>{this.props.time.format('HH:mm')}</Text></View>
+        </View>
+        );
+  }
+});
+
+var CountDownBox = React.createClass({
+  render: function() {
+    return (
+        <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
+        <View><Text style={{textAlign: 'center'}}>Time Remaining</Text></View>
+        <View><Text style={{textAlign: 'center', fontSize: 34}}>{this.props.time.format('mm′:ss′′')}</Text></View>
         </View>
         );
   }
@@ -214,6 +225,7 @@ var TimeBox = React.createClass({
 
 AppRegistry.registerComponent('SaveTheShoes', () => SaveTheShoes);
 AppRegistry.registerComponent('TimeBox', () => TimeBox);
+AppRegistry.registerComponent('CountDownBox', () => CountDownBox);
 
 var styles = ({
   base: {
