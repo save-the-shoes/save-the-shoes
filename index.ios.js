@@ -97,7 +97,7 @@ var PRESSURES_AND_MINUTES = {
 
 var SaveTheShoes = React.createClass({
   startTimer: function () {
-    this.setState({timerRunning: true});
+    this.setState({timerRunning: !this.state.timerRunning});
   },
 
   getInitialState: function() {
@@ -110,7 +110,7 @@ var SaveTheShoes = React.createClass({
 
   render: function() {
     var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
-    var selectionString = pressure.bar + ' bar which gives ' + pressure.minutes + ' minutes. ' + this.state.timerRunning;
+    var selectionString = pressure.bar + ' bar which gives ' + pressure.minutes + ' minutes. ';
     return (
       <View style={[styles.background, styles.base]}>
         <Text></Text>
@@ -130,7 +130,9 @@ var SaveTheShoes = React.createClass({
         <Text>You selected: {selectionString}</Text>
 
         <TouchableHighlight style={styles.buttonContainer} onPress={this.startTimer}>
-          <Text style={styles.button}>Go!</Text>
+          <Text style={styles.button}>
+            {this.state.timerRunning ? 'Stop' : 'Go!'}
+          </Text>
         </TouchableHighlight>
       </View>
     );
