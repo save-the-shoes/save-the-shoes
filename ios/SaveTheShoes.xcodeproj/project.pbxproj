@@ -23,6 +23,8 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		912FD9731BAB81F90009C76A /* libRNAudioPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 912FD9701BAB81050009C76A /* libRNAudioPlayer.a */; };
+		912FD9751BAB82A10009C76A /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 912FD9741BAB82A10009C76A /* alarm.mp3 */; };
 		91AF19661BAA6C0B008D2EDF /* libRCTPushNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91AF19651BAA6BE2008D2EDF /* libRCTPushNotification.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +106,20 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		912FD96F1BAB81050009C76A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 912FD95F1BAB81050009C76A /* RNAudioPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBE79C421B01EB5A00446766;
+			remoteInfo = RNAudioPlayer;
+		};
+		912FD9711BAB81050009C76A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 912FD95F1BAB81050009C76A /* RNAudioPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBE79C4D1B01EB5B00446766;
+			remoteInfo = RNAudioPlayerTests;
+		};
 		91AF19641BAA6BE2008D2EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 91AF19601BAA6BE2008D2EDF /* RCTPushNotification.xcodeproj */;
@@ -135,6 +151,8 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		912FD95F1BAB81050009C76A /* RNAudioPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNAudioPlayer.xcodeproj; path = "../node_modules/react-native-audioplayer/RNAudioPlayer.xcodeproj"; sourceTree = "<group>"; };
+		912FD9741BAB82A10009C76A /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = alarm.mp3; path = ../alarm.mp3; sourceTree = "<group>"; };
 		91AF19601BAA6BE2008D2EDF /* RCTPushNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTPushNotification.xcodeproj; path = "../node_modules/react-native/Libraries/PushNotificationIOS/RCTPushNotification.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +170,7 @@
 			files = (
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				91AF19661BAA6C0B008D2EDF /* libRCTPushNotification.a in Frameworks */,
+				912FD9731BAB81F90009C76A /* libRNAudioPlayer.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
@@ -273,6 +292,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				912FD95F1BAB81050009C76A /* RNAudioPlayer.xcodeproj */,
 				91AF19601BAA6BE2008D2EDF /* RCTPushNotification.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -299,6 +319,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				912FD9741BAB82A10009C76A /* alarm.mp3 */,
 				13B07FAE1A68108700A75B9A /* SaveTheShoes */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* SaveTheShoesTests */,
@@ -313,6 +334,15 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* SaveTheShoes.app */,
 				00E356EE1AD99517003FC87E /* SaveTheShoesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		912FD9601BAB81050009C76A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				912FD9701BAB81050009C76A /* libRNAudioPlayer.a */,
+				912FD9721BAB81050009C76A /* RNAudioPlayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -434,6 +464,10 @@
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
+				{
+					ProductGroup = 912FD9601BAB81050009C76A /* Products */;
+					ProjectRef = 912FD95F1BAB81050009C76A /* RNAudioPlayer.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -514,6 +548,20 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		912FD9701BAB81050009C76A /* libRNAudioPlayer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNAudioPlayer.a;
+			remoteRef = 912FD96F1BAB81050009C76A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		912FD9721BAB81050009C76A /* RNAudioPlayerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RNAudioPlayerTests.xctest;
+			remoteRef = 912FD9711BAB81050009C76A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		91AF19651BAA6BE2008D2EDF /* libRCTPushNotification.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -535,6 +583,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912FD9751BAB82A10009C76A /* alarm.mp3 in Resources */,
 				008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,

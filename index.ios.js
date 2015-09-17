@@ -3,6 +3,7 @@
 var React = require('react-native');
 var Moment = require('moment');
 var TimerMixin = require('react-native-timer-mixin');
+var AudioPlayer = require('react-native-audioplayer');
 
 var {
   AppRegistry,
@@ -126,7 +127,6 @@ var SaveTheShoes = React.createClass({
     }
 
     var timeInMilliseconds = this.pressure().minutesOfAir * 60 * 1000;
-    this.setTimeout(() => this.setState({timerRunning: false}), timeInMilliseconds);
 
     this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
 
@@ -136,8 +136,22 @@ var SaveTheShoes = React.createClass({
   },
 
   decrementTimer: function() {
-    if(this.state.timerRunning) {
-      this.setState({timeRemaining: this.state.timeRemaining.subtract(1, 'second')});
+    if (!this.state.timerRunning) {
+      return false;
+    }
+
+    // TODO - deltatime
+    this.setState({timeRemaining: this.state.timeRemaining.subtract(1, 'second')});
+
+    if (this.state.timeRemaining <= 0) {
+      AudioPlayer.play('alarm.mp3');
+
+      AlertIOS.alert(
+        'Beep beep',
+        "Time's up!"
+      );
+
+      this.setState({timerRunning: false});
     }
   },
 
