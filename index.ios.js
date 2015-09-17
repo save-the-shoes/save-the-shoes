@@ -197,9 +197,6 @@ var SaveTheShoes = React.createClass({
             )}
         </PickerIOS>
 
-        <Text>{selectedBar}bar</Text>
-        <Text>{minutesOfAir}minutes air</Text>
-
         <CountDownBox time={this.state.timeRemaining}></CountDownBox>
         {this.timesRunning(pressure)}
 
