@@ -157,9 +157,9 @@ var SaveTheShoes = React.createClass({
     var minutesOfAir =  pressure.minutes
 
     return (
-        <View style={[styles.background, styles.base]}>
-        <Text></Text>
-        <Text>Enter Cylinder Pressure: </Text>
+        <View style={[styles.background, styles.base,]}>
+        <Text ></Text>
+        <Text style={{fontWeight: 'bold',  textAlign: 'center', fontSize: 18}}>Enter Cylinder Pressure </Text>
         <PickerIOS
           selectedValue={this.state.barPressure}
           onValueChange={(barPressure) => this.setState({barPressure})}>
@@ -194,6 +194,7 @@ var styles = ({
   base: {
     padding: 20,
   },
+  
   background: {
     backgroundColor: '#EFEFEF',
   },
@@ -208,4 +209,6 @@ var styles = ({
     justifyContent: 'center',
     alignItems: 'center'
   }
+  
+
 });
