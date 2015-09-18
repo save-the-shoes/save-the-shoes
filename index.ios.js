@@ -236,9 +236,9 @@ var SaveTheShoes = React.createClass({
     return (
         <View style={[styles.background, styles.base,]}>
         {this.modeDisplay()}
-        <TouchableHighlight style={styles.buttonContainer} >
+        <View style={styles.buttonContainer} >
         {this.buttonGoStop()}
-        </TouchableHighlight>
+        </View>
         </View>
         );
   },
@@ -296,6 +296,8 @@ var styles = ({
     backgroundColor: '#007AFF',
     padding: 20,
     width: 200,
+    textAlign: 'center',
+    fontSize: 18,
   },
 
   buttonGo: {
