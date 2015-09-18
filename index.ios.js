@@ -272,7 +272,8 @@ AppRegistry.registerComponent('CountDownBox', () => CountDownBox);
 
 var styles = ({
   base: {
-    padding: 25
+    paddingTop: 25,
+    paddingBottom: 25
   },
 
   header: {
