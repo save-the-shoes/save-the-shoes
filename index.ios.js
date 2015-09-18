@@ -120,12 +120,12 @@ var SaveTheShoes = React.createClass({
   },
 
   startTimer: function () {
-    if (false && this.state.timerRunning) {
+    if (this.state.timerRunning) {
       AlertIOS.alert(
           'Stop the timer?',
           'Are you sure you want to stop the timer?', [
           {text: 'Yes', onPress: () => this.setState({timerRunning: false})},
-          {text: 'No', onPress: () => this.setState({timerRunning: true})},
+          {text: 'No'},
           ]);
 
       return;
@@ -206,8 +206,9 @@ var SaveTheShoes = React.createClass({
           <View>
           <Text style={styles.header}>Select Cylinder Pressure </Text>
           <PickerIOS
+          style={styles.PickerIOS}
           selectedValue={this.state.barPressure}
-          onValueChange={(barPressure) => this.setState({barPressure})} style={styles.PickerIOS}>
+          onValueChange={(barPressure) => this.setState({barPressure})}>
           {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
                 <PickerItemIOS
                 key={barPressure}
