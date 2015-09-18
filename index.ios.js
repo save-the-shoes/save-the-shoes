@@ -1,3 +1,4 @@
+/* @flow */
 'use strict';
 
 var React = require('react-native');
@@ -110,7 +111,7 @@ var SaveTheShoes = React.createClass({
     return {
       pressureData: pressure,
       selectedBar: pressure.bar,
-      minutesOfAir: pressure.minutes
+      minutesOfAir: parseInt(pressure.minutes, 10)
     };
   },
 
@@ -134,8 +135,9 @@ var SaveTheShoes = React.createClass({
 
     this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
 
-    var timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes;
-    this.setState({timeRemaining: Moment.duration(parseInt(timeInMinutes, 10), 'minutes')});
+    // TODO make a timer for each stage (- 15 for RA time currently)
+    var timeInMinutes = parseInt(PRESSURES_AND_MINUTES[this.state.barPressure].minutes, 10) - 15;
+    this.setState({timeRemaining: Moment.duration(timeInMinutes, 'minutes')});
   },
 
   decrementTimer: function() {
@@ -203,7 +205,7 @@ var SaveTheShoes = React.createClass({
         <Text style={styles.header}>Select Cylinder Pressure </Text>
         <PickerIOS
         selectedValue={this.state.barPressure}
-        onValueChange={(barPressure) => this.setState({barPressure})} style={styles.PickerIOS}>
+        onValueChange={(barPressure) => this.setState({barPressure})} style={styles.pickerIOS}>
         {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
               <PickerItemIOS
               key={barPressure}
