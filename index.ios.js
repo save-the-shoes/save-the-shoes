@@ -164,10 +164,10 @@ var SaveTheShoes = React.createClass({
       return (
 
           <View>
-          <TimeBox time={inTime} title="Time In"></TimeBox>
+          <TimeBox time={inTime} title="Crew Entered at"></TimeBox>
           <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
           <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
-          <TimeBox time={outTime} title="Time Out"></TimeBox>
+          <TimeBox time={outTime} title="Time Due Out"></TimeBox>
           </View>
           );
     } else {
@@ -183,10 +183,10 @@ var SaveTheShoes = React.createClass({
     return (
         <View style={[styles.background, styles.base,]}>
         <Text ></Text>
-        <Text style={{fontWeight: 'bold',  textAlign: 'center', fontSize: 18}}>Enter Cylinder Pressure </Text>
+        <Text style={styles.header}>Select Cylinder Pressure </Text>
         <PickerIOS
         selectedValue={this.state.barPressure}
-        onValueChange={(barPressure) => this.setState({barPressure})}>
+        onValueChange={(barPressure) => this.setState({barPressure})} style={styles.PickerIOS}>
         {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
               <PickerItemIOS
               key={barPressure}
@@ -238,7 +238,17 @@ AppRegistry.registerComponent('CountDownBox', () => CountDownBox);
 
 var styles = ({
   base: {
-    padding: 20,
+  },
+
+  header: {
+    paddingTop: 40,
+    fontWeight: 'bold',  
+    textAlign: 'center', 
+    fontSize: 18
+  },
+
+  pickerIOS: {
+
   },
 
   background: {
