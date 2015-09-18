@@ -8,6 +8,7 @@ var {
   View,
 } = React;
 
+
 var PickerItemIOS = PickerIOS.Item;
 
 var PRESSURES_AND_MINUTES = {
@@ -105,7 +106,7 @@ var SaveTheShoes = React.createClass({
     var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
     var selectionString = pressure.bar + ' bar which gives ' + pressure.minutes + ' minutes.';
     return (
-      <View>
+      <View style={[styles.background, styles.base]}>
         <Text></Text>
         <Text>Enter Cylinder Pressure: </Text>
         <PickerIOS
@@ -127,3 +128,13 @@ var SaveTheShoes = React.createClass({
 });
 
 AppRegistry.registerComponent('SaveTheShoes', () => SaveTheShoes);
+
+var styles = ({
+  base: {
+    height: 800,
+    padding: 20,
+  },
+  background: {
+    backgroundColor: '#ffff99',
+  },
+});
