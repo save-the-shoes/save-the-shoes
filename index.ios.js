@@ -134,7 +134,8 @@ var SaveTheShoes = React.createClass({
 
     this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
 
-    var timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes;
+    // TODO make a timer for each stage (- 15 for RA time currently)
+    var timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
     this.setState({timeRemaining: Moment.duration(parseInt(timeInMinutes, 10), 'minutes')});
   },
 
@@ -151,7 +152,7 @@ var SaveTheShoes = React.createClass({
 
       AlertIOS.alert(
         'Beep beep',
-        "Time's up!"
+        "Time for relief assembly!"
       );
 
       this.setState({timerRunning: false});
@@ -161,7 +162,6 @@ var SaveTheShoes = React.createClass({
   getInitialState: function() {
     return {
       barPressure: '110',
-      minutes: 15,
       timerRunning: false,
       inTime: null,
       timeRemaining: Moment.duration(0)
