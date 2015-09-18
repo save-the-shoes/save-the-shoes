@@ -217,8 +217,8 @@ var SaveTheShoes = React.createClass({
         <CountDownBox time={this.state.timeRemaining}></CountDownBox>
         {this.timesRunning(pressure)}
 
-        <TouchableHighlight style={styles.buttonContainer} onPress={this.startTimer}>
-          <Text style={styles.button}>
+        <TouchableHighlight style={styles.buttonContainer} >
+          <Text style={styles.button} onPress={this.startTimer} >
           {this.state.timerRunning ? 'Stop' : 'Go!'}
         </Text>
           </TouchableHighlight>
@@ -270,16 +270,19 @@ var styles = ({
 
   background: {
     backgroundColor: '#EFEFEF',
+    flex: 1
   },
 
   button: {
-    color: '#007aff'
+    color: '#FFFFFF',
+    backgroundColor: '#007aff',
+    padding: 20,
+    width: 200,
   },
 
   buttonContainer: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   }
 });
