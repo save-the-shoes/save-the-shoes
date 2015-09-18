@@ -180,7 +180,6 @@ var SaveTheShoes = React.createClass({
 
     if(this.state.timerRunning) {
       return (
-
           <View>
           <TimeBox time={inTime} title="Crew Entered at"></TimeBox>
           <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
@@ -193,6 +192,42 @@ var SaveTheShoes = React.createClass({
     }
   },
 
+  modeDisplay: function() {
+    if(this.state.timerRunning){
+      var pressure = this.pressure().pressureData;
+      return (
+          <View>
+          <CountDownBox time={this.state.timeRemaining}></CountDownBox>
+          {this.timesRunning(pressure)}
+          </View>
+          );
+    }else{
+      return (
+          <View>
+          <Text style={styles.header}>Select Cylinder Pressure </Text>
+          <PickerIOS
+          selectedValue={this.state.barPressure}
+          onValueChange={(barPressure) => this.setState({barPressure})} style={styles.PickerIOS}>
+          {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
+                <PickerItemIOS
+                key={barPressure}
+                value={barPressure}
+                label={PRESSURES_AND_MINUTES[barPressure].bar}
+                />
+                )
+              )}
+          </PickerIOS>
+          </View>
+          );
+    }
+  },
+
+  buttonGoStop: function() {
+    return (
+        <Text style={[styles.button, (this.state.timerRunning ? styles.buttonStop : styles.buttonGo)]} onPress={this.startTimer}>{this.state.timerRunning ? 'Stop' : 'Go!'}</Text>
+        );
+  },
+
   render: function() {
     var pressure = this.pressure().pressureData;
     var selectedBar = this.pressure().selectedBar;
@@ -200,31 +235,12 @@ var SaveTheShoes = React.createClass({
 
     return (
         <View style={[styles.background, styles.base,]}>
-        <Text ></Text>
-        <Text style={styles.header}>Select Cylinder Pressure </Text>
-        <PickerIOS
-        selectedValue={this.state.barPressure}
-        onValueChange={(barPressure) => this.setState({barPressure})} style={styles.pickerIOS}>
-        {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
-              <PickerItemIOS
-              key={barPressure}
-              value={barPressure}
-              label={PRESSURES_AND_MINUTES[barPressure].bar}
-              />
-              )
-            )}
-        </PickerIOS>
-
-        <CountDownBox time={this.state.timeRemaining}></CountDownBox>
-        {this.timesRunning(pressure)}
-
+        {this.modeDisplay()}
         <TouchableHighlight style={styles.buttonContainer} >
-          <Text style={styles.button} onPress={this.startTimer} >
-          {this.state.timerRunning ? 'Stop' : 'Go!'}
-        </Text>
-          </TouchableHighlight>
-          </View>
-          );
+        {this.buttonGoStop()}
+        </TouchableHighlight>
+        </View>
+        );
   },
 });
 
@@ -256,10 +272,10 @@ AppRegistry.registerComponent('CountDownBox', () => CountDownBox);
 
 var styles = ({
   base: {
+    padding: 25
   },
 
   header: {
-    paddingTop: 40,
     fontWeight: 'bold',  
     textAlign: 'center', 
     fontSize: 18
@@ -276,9 +292,17 @@ var styles = ({
 
   button: {
     color: '#FFFFFF',
-    backgroundColor: '#007aff',
+    backgroundColor: '#007AFF',
     padding: 20,
     width: 200,
+  },
+
+  buttonGo: {
+    backgroundColor: '#009933',
+  },
+
+  buttonStop: {
+    backgroundColor: '#E60000',
   },
 
   buttonContainer: {
