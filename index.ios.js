@@ -131,8 +131,6 @@ var SaveTheShoes = React.createClass({
       return;
     }
 
-    var timeInMilliseconds = this.pressure().minutesOfAir * 60 * 1000;
-
     this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
 
     // TODO make a timer for each stage (- 15 for RA time currently)
@@ -187,8 +185,6 @@ var SaveTheShoes = React.createClass({
           <TimeBox time={outTime} title="Time Due Out"></TimeBox>
           </View>
           );
-    } else {
-      return (<View></View>);
     }
   },
 
@@ -204,7 +200,7 @@ var SaveTheShoes = React.createClass({
     }else{
       return (
           <View>
-          <Text style={styles.header}>Select Cylinder Pressure </Text>
+          <Text style={styles.header}>Select Cylinder Pressure</Text>
           <PickerIOS
           style={styles.PickerIOS}
           selectedValue={this.state.barPressure}
@@ -224,9 +220,15 @@ var SaveTheShoes = React.createClass({
   },
 
   buttonGoStop: function() {
-    return (
-        <Text style={[styles.button, (this.state.timerRunning ? styles.buttonStop : styles.buttonGo)]} onPress={this.startTimer}>{this.state.timerRunning ? 'Stop' : 'Go!'}</Text>
-        );
+    if(this.state.timerRunning) {
+      return (
+          <Text style={[styles.button, styles.buttonStop ]} onPress={this.startTimer}>Stop</Text>
+          );
+    } else {
+      return (
+          <Text style={[styles.button, styles.buttonGo]} onPress={this.startTimer}>Go</Text>
+          );
+    }
   },
 
   render: function() {
