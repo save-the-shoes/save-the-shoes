@@ -202,7 +202,7 @@ var SaveTheShoes = React.createClass({
           <View>
           <Text style={styles.header}>Select Cylinder Pressure</Text>
           <PickerIOS
-          style={styles.PickerIOS}
+          style={styles.pickerIOS}
           selectedValue={this.state.barPressure}
           onValueChange={(barPressure) => this.setState({barPressure})}>
           {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
@@ -286,7 +286,6 @@ var styles = ({
   },
 
   pickerIOS: {
-
   },
 
   background: {
