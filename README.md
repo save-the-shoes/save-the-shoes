@@ -10,3 +10,9 @@ Development
 ---
 
 `open ios/SaveTheShoes.xcodeproj`
+`npm run autotest`
+
+Tests
+---
+
+`npm test`
