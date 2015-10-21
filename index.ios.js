@@ -186,13 +186,13 @@ var SaveTheShoes = React.createClass({
     }
 
     return (
-        <View>
+      <View>
         <TimeBox time={inTime} title="Crew Entered at"></TimeBox>
         <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
         <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
         <TimeBox time={outTime} title="Time Due Out"></TimeBox>
-        </View>
-        );
+      </View>
+    );
   },
 
   modeDisplay: function() {
@@ -262,8 +262,13 @@ var TimeBox = React.createClass({
   render: function() {
     return (
       <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
-        <View><Text style={{textAlign: 'center'}}>{this.props.title}</Text></View>
-        <View><Text style={{textAlign: 'center', fontSize: 24}}>{formatTime(Moment().diff(this.props.time, 'seconds'))}</Text></View>
+        <View>
+          <Text style={{textAlign: 'center'}}>{`${this.props.title} @ ${this.props.time.format('hh:mm')}`}</Text>
+        </View>
+
+        <View>
+          <Text style={{textAlign: 'center', fontSize: 24}}>{formatTime(Moment().diff(this.props.time, 'seconds'))}</Text>
+        </View>
       </View>
     );
   }

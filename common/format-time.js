@@ -8,7 +8,7 @@ module.exports = function formatTime (seconds) {
 
   if (seconds < 0) {
     ago = '';
-    inText = 'In ';
+    inText = '';
   }
 
   let absoluteSeconds = Math.abs(seconds);
