@@ -5,3 +5,8 @@ Install
 ---
 
 `npm install`
+
+Development
+---
+
+`open ios/SaveTheShoes.xcodeproj`
