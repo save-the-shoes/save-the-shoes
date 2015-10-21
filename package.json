@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node_modules/react-native/packager/packager.sh"
+    "start": "node_modules/react-native/packager/packager.sh",
+    "test": "mocha"
   },
   "dependencies": {
     "lodash": "^3.10.1",
@@ -11,5 +12,8 @@
     "react-native": "^0.11.0",
     "react-native-audioplayer": "^0.1.0",
     "react-native-timer-mixin": "^0.10.2"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3"
   }
 }
