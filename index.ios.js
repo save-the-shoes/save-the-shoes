@@ -144,7 +144,7 @@ var SaveTheShoes = React.createClass({
       AlertIOS.alert(
           'Stop the timer?',
           'Are you sure you want to stop the timer?', [
-          {text: 'Yes', onPress: () => this.setState({timerRunning: false})},
+          {text: 'Yes', onPress: () => this.setState({timerRunning: false, displayTimerScreen: false})},
           {text: 'No'},
           ]);
 
@@ -153,9 +153,15 @@ var SaveTheShoes = React.createClass({
 
     this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
 
+    this.setState({displayTimerScreen: true});
+
     // TODO make a timer for each stage (- 15 for RA time currently)
     var timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
     this.setState({timeRemaining: Moment.duration(timeInMinutes, 'minutes')});
+  },
+
+  timerScreen: function() {
+    this.setState({displayTimerScreen: false});
   },
 
   decrementTimer: function() {
@@ -196,20 +202,18 @@ var SaveTheShoes = React.createClass({
       var reliefInTime = Moment(outTime).subtract(10, 'minutes');
     }
 
-    if(this.state.timerRunning) {
-      return (
-          <View>
-          <TimeBox time={inTime} title="Crew Entered at"></TimeBox>
-          <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
-          <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
-          <TimeBox time={outTime} title="Time Due Out"></TimeBox>
-          </View>
-          );
-    }
+    return (
+        <View>
+        <TimeBox time={inTime} title="Crew Entered at"></TimeBox>
+        <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
+        <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
+        <TimeBox time={outTime} title="Time Due Out"></TimeBox>
+        </View>
+        );
   },
 
   modeDisplay: function() {
-    if(this.state.timerRunning){
+    if(this.state.displayTimerScreen){
       var pressure = this.pressure().pressureData;
       return (
           <View>
@@ -239,10 +243,14 @@ var SaveTheShoes = React.createClass({
     }
   },
 
-  buttonGoStop: function() {
+  buttonGoStopBack: function() {
     if(this.state.timerRunning) {
       return (
           <Text style={[styles.button, styles.buttonStop ]} onPress={this.startTimer}>Stop</Text>
+          );
+    } else if(this.state.displayTimerScreen) {
+      return (
+          <Text style={[styles.button]} onPress={this.timerScreen}>Back</Text>
           );
     } else {
       return (
@@ -260,7 +268,7 @@ var SaveTheShoes = React.createClass({
         <View style={[styles.background, styles.base,]}>
         {this.modeDisplay()}
         <View style={styles.buttonContainer} >
-        {this.buttonGoStop()}
+        {this.buttonGoStopBack()}
         </View>
         </View>
         );
