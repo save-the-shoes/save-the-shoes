@@ -21,84 +21,84 @@ var PickerItemIOS = PickerIOS.Item;
 
 var PRESSURES_AND_MINUTES = {
   '300': {
-    bar: '300',
-    minutes: '51',
+    bar: 300,
+    minutes: 51,
   },
   '290': {
-    bar: '290',
-    minutes: '49',
+    bar: 290,
+    minutes: 49,
   },
   '280': {
-    bar: '280',
-    minutes: '47',
+    bar: 280,
+    minutes: 47,
   },
   '270': {
-    bar: '270',
-    minutes: '45',
+    bar: 270,
+    minutes: 45,
   },
   '260': {
-    bar: '260',
-    minutes: '44',
+    bar: 260,
+    minutes: 44,
   },
   '250': {
-    bar: '250',
-    minutes: '42',
+    bar: 250,
+    minutes: 42,
   },
   '240': {
-    bar: '240',
-    minutes: '40',
+    bar: 240,
+    minutes: 40,
   },
   '230': {
-    bar: '230',
-    minutes: '38',
+    bar: 230,
+    minutes: 38,
   },
   '220': {
-    bar: '220',
-    minutes: '36',
+    bar: 220,
+    minutes: 36,
   },
   '210': {
-    bar: '210',
-    minutes: '34',
+    bar: 210,
+    minutes: 34,
   },
   '200': {
-    bar: '200',
-    minutes: '33',
+    bar: 200,
+    minutes: 33,
   },
   '190': {
-    bar: '190',
-    minutes: '31',
+    bar: 190,
+    minutes: 31,
   },
   '180': {
-    bar: '180',
-    minutes: '29',
+    bar: 180,
+    minutes: 29,
   },
   '170': {
-    bar: '170',
-    minutes: '27',
+    bar: 170,
+    minutes: 27,
   },
   '160': {
-    bar: '160',
-    minutes: '25',
+    bar: 160,
+    minutes: 25,
   },
   '150': {
-    bar: '150',
-    minutes: '23',
+    bar: 150,
+    minutes: 23,
   },
   '140': {
-    bar: '140',
-    minutes: '21',
+    bar: 140,
+    minutes: 21,
   },
   '130': {
-    bar: '130',
-    minutes: '19',
+    bar: 130,
+    minutes: 19,
   },
   '120': {
-    bar: '120',
-    minutes: '17',
+    bar: 120,
+    minutes: 17,
   },
   '110': {
-    bar: '110',
-    minutes: '15',
+    bar: 110,
+    minutes: 15,
   },
 };
 
@@ -111,7 +111,7 @@ var SaveTheShoes = React.createClass({
     return {
       pressureData: pressure,
       selectedBar: pressure.bar,
-      minutesOfAir: parseInt(pressure.minutes, 10)
+      minutesOfAir: pressure.minutes
     };
   },
 
@@ -134,7 +134,7 @@ var SaveTheShoes = React.createClass({
     this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
 
     // TODO make a timer for each stage (- 15 for RA time currently)
-    var timeInMinutes = parseInt(PRESSURES_AND_MINUTES[this.state.barPressure].minutes, 10) - 15;
+    var timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
     this.setState({timeRemaining: Moment.duration(timeInMinutes, 'minutes')});
   },
 
@@ -209,7 +209,7 @@ var SaveTheShoes = React.createClass({
                 <PickerItemIOS
                 key={barPressure}
                 value={barPressure}
-                label={PRESSURES_AND_MINUTES[barPressure].bar}
+                label={PRESSURES_AND_MINUTES[barPressure].bar.toString()}
                 />
                 )
               )}
@@ -234,7 +234,7 @@ var SaveTheShoes = React.createClass({
   render: function() {
     var pressure = this.pressure().pressureData;
     var selectedBar = this.pressure().selectedBar;
-    var minutesOfAir =  this.pressure().minutesOfAir;
+    var minutesOfAir = this.pressure().minutesOfAir;
 
     return (
         <View style={[styles.background, styles.base,]}>
@@ -280,8 +280,8 @@ var styles = ({
   },
 
   header: {
-    fontWeight: 'bold',  
-    textAlign: 'center', 
+    fontWeight: 'bold',
+    textAlign: 'center',
     fontSize: 18
   },
 
