@@ -5,6 +5,7 @@ var React = require('react-native');
 var Moment = require('moment');
 var TimerMixin = require('react-native-timer-mixin');
 var AudioPlayer = require('react-native-audioplayer');
+var _ = require('lodash');
 
 var {
   AppRegistry,
@@ -101,6 +102,25 @@ var PRESSURES_AND_MINUTES = {
     minutes: 15,
   },
 };
+
+function formatTimeDiff (seconds) {
+  let ago = ' ago';
+  let inText = '';
+
+  if (seconds < 0) {
+    ago = '';
+    inText = 'In ';
+  }
+
+  let absoluteSeconds = Math.abs(seconds);
+
+  let timeFormat = time => _.padLeft(time, 2, '0');
+
+  let minutesText = timeFormat(Math.floor(absoluteSeconds / 60));
+  let secondsText = timeFormat(absoluteSeconds % 60);
+
+  return `${inText}${minutesText}′${secondsText}′′${ago}`;
+}
 
 var SaveTheShoes = React.createClass({
   mixins: [TimerMixin],
@@ -258,11 +278,11 @@ var SaveTheShoes = React.createClass({
 var TimeBox = React.createClass({
   render: function() {
     return (
-        <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
+      <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
         <View><Text style={{textAlign: 'center'}}>{this.props.title}</Text></View>
-        <View><Text style={{textAlign: 'center', fontSize: 24}}>{this.props.time.format('HH:mm')}</Text></View>
-        </View>
-        );
+        <View><Text style={{textAlign: 'center', fontSize: 24}}>{formatTimeDiff(Moment().diff(this.props.time, 'seconds'))}</Text></View>
+      </View>
+    );
   }
 });
 
