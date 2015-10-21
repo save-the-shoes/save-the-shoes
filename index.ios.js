@@ -200,7 +200,6 @@ var SaveTheShoes = React.createClass({
       var pressure = this.pressure().pressureData;
       return (
           <View>
-          <CountDownBox time={this.state.timeRemaining}></CountDownBox>
           {this.timesRunning(pressure)}
           </View>
           );
@@ -274,20 +273,8 @@ var TimeBox = React.createClass({
   }
 });
 
-var CountDownBox = React.createClass({
-  render: function() {
-    return (
-        <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
-        <View><Text style={{textAlign: 'center'}}>Time Remaining</Text></View>
-        <View><Text style={{textAlign: 'center', fontSize: 34}}>{this.props.time.minutes()}′{this.props.time.seconds()}′′</Text></View>
-        </View>
-        );
-  }
-});
-
 AppRegistry.registerComponent('SaveTheShoes', () => SaveTheShoes);
 AppRegistry.registerComponent('TimeBox', () => TimeBox);
-AppRegistry.registerComponent('CountDownBox', () => CountDownBox);
 
 var styles = ({
   base: {
