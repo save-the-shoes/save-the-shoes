@@ -120,18 +120,16 @@ var SaveTheShoes = React.createClass({
   },
 
   startTimer: function () {
-    if (false && this.state.timerRunning) {
+    if (this.state.timerRunning) {
       AlertIOS.alert(
           'Stop the timer?',
           'Are you sure you want to stop the timer?', [
           {text: 'Yes', onPress: () => this.setState({timerRunning: false})},
-          {text: 'No', onPress: () => this.setState({timerRunning: true})},
+          {text: 'No'},
           ]);
 
       return;
     }
-
-    var timeInMilliseconds = this.pressure().minutesOfAir * 60 * 1000;
 
     this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
 
@@ -187,8 +185,6 @@ var SaveTheShoes = React.createClass({
           <TimeBox time={outTime} title="Time Due Out"></TimeBox>
           </View>
           );
-    } else {
-      return (<View></View>);
     }
   },
 
@@ -204,10 +200,11 @@ var SaveTheShoes = React.createClass({
     }else{
       return (
           <View>
-          <Text style={styles.header}>Select Cylinder Pressure </Text>
+          <Text style={styles.header}>Select Cylinder Pressure</Text>
           <PickerIOS
+          style={styles.PickerIOS}
           selectedValue={this.state.barPressure}
-          onValueChange={(barPressure) => this.setState({barPressure})} style={styles.PickerIOS}>
+          onValueChange={(barPressure) => this.setState({barPressure})}>
           {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
                 <PickerItemIOS
                 key={barPressure}
@@ -223,9 +220,15 @@ var SaveTheShoes = React.createClass({
   },
 
   buttonGoStop: function() {
-    return (
-        <Text style={[styles.button, (this.state.timerRunning ? styles.buttonStop : styles.buttonGo)]} onPress={this.startTimer}>{this.state.timerRunning ? 'Stop' : 'Go!'}</Text>
-        );
+    if(this.state.timerRunning) {
+      return (
+          <Text style={[styles.button, styles.buttonStop ]} onPress={this.startTimer}>Stop</Text>
+          );
+    } else {
+      return (
+          <Text style={[styles.button, styles.buttonGo]} onPress={this.startTimer}>Go</Text>
+          );
+    }
   },
 
   render: function() {
@@ -236,9 +239,9 @@ var SaveTheShoes = React.createClass({
     return (
         <View style={[styles.background, styles.base,]}>
         {this.modeDisplay()}
-        <TouchableHighlight style={styles.buttonContainer} >
+        <View style={styles.buttonContainer} >
         {this.buttonGoStop()}
-        </TouchableHighlight>
+        </View>
         </View>
         );
   },
@@ -296,6 +299,8 @@ var styles = ({
     backgroundColor: '#007AFF',
     padding: 20,
     width: 200,
+    textAlign: 'center',
+    fontSize: 18,
   },
 
   buttonGo: {
