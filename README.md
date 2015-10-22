@@ -16,3 +16,15 @@ Tests
 ---
 
 `npm test`
+
+Release
+---
+
+```
+  git fetch
+  git checkout release
+  git pull origin master
+  react-native bundle
+  git commit -am "Update bundle"
+  <build and release with xcode>
+```
