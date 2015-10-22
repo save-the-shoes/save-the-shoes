@@ -1,16 +1,19 @@
 'use strict';
 
-var React = require('react-native');
-var Dropdown = require('react-native-dropdown-android');
+let React = require('react-native');
+let Moment = require('moment');
+let TimerMixin = require('react-native-timer-mixin');
+let Dropdown = require('react-native-dropdown-android');
+let formatTime = require('./common/format-time');
 
-var {
+let {
   AppRegistry,
   StyleSheet,
   Text,
   View,
 } = React;
 
-var PRESSURES_AND_MINUTES = {
+let PRESSURES_AND_MINUTES = {
   '300': {
     bar: 300,
     minutes: 51,
@@ -93,46 +96,167 @@ var PRESSURES_AND_MINUTES = {
   },
 };
 
-var SaveTheShoes = React.createClass({
-  modeDisplay: function() {
-    return(
+let SaveTheShoes = React.createClass({
+  mixins: [TimerMixin],
+
+  getInitialState: function() {
+    return {
+      barPressure: 110
+    };
+  },
+
+  pressure: function() {
+    var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
+
+    return {
+      pressureData: pressure,
+      selectedBar: pressure.bar,
+      minutesOfAir: pressure.minutes
+    };
+  },
+
+  componentDidMount: function() {
+    this.setInterval(this.decrementTimer, 1000);
+  },
+
+  startTimer: function() {
+    if (this.state.timerRunning) {
+      this.setState({timerRunning: false});
+
+      return;
+    }
+
+    this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
+
+    this.setState({displayTimerScreen: true});
+
+    let timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
+    this.setState({timeRemaining: Moment.duration(timeInMinutes, 'minutes')});
+  },
+
+  decrementTimer: function() {
+    if (!this.state.timerRunning) {
+      return false;
+    }
+
+    this.setState({timeRemaining: this.state.timeRemaining.subtract(1, 'second')});
+
+    if(this.state.timeRemaining <= 0) {
+      this.setState({timerRunning: false});
+    }
+  },
+
+  updateBarPressure: function(data) {
+    this.setState({barPressure: data.value});
+  },
+
+  timesRunning: function(pressure) {
+    if(this.state.inTime != null) {
+      var inTime = Moment(this.state.inTime);
+      var outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
+
+      var reliefAssemblyTime = Moment(outTime).subtract(15, 'minutes');
+      var reliefInTime = Moment(outTime).subtract(10, 'minutes');
+    }
+
+    return (
       <View>
-        <Text style={styles.welcome}>
-          Select Cylinder Pressure
-        </Text>
-        <Dropdown
-          style={{ height: 20, width: 200 }}
-          values={[100, 110, 120]} selected={1} />
+        <TimeBox time={inTime} title="Crew Entered"></TimeBox>
+        <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
+        <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
+        <TimeBox time={outTime} title="Time Due Out"></TimeBox>
       </View>
     );
+  },
+
+  timerScreen: function() {
+    this.setState({displayTimerScreen: false});
+  },
+
+  modeDisplay: function() {
+    if(this.state.displayTimerScreen){
+      let pressure = this.pressure().pressureData;
+
+      return (
+        <View>
+          {this.timesRunning(pressure)}
+        </View>
+      );
+    } else {
+      return(
+        <View style={styles.container}>
+          <Text style={styles.header}>
+            Select Cylinder Pressure
+          </Text>
+          <Dropdown
+            style={styles.dropdown}
+            values={Object.keys(PRESSURES_AND_MINUTES)} selected={0}
+            onChange={this.updateBarPressure}
+          />
+        </View>
+      );
+    }
+  },
+
+  buttonGoStopBack: function() {
+    if(this.state.timerRunning) {
+      return (
+        <Text onPress={this.startTimer}>Stop</Text>
+      );
+    } else if(this.state.displayTimerScreen) {
+      return (
+        <Text onPress={this.timerScreen}>Back</Text>
+      );
+    } else {
+      return (
+        <Text onPress={this.startTimer}>Go</Text>
+      );
+    }
   },
 
   render: function() {
     return (
       <View>
         {this.modeDisplay()}
+        {this.buttonGoStopBack()}
       </View>
     );
   }
 });
 
-var styles = StyleSheet.create({
+var TimeBox = React.createClass({
+  render: function() {
+    return (
+      <View>
+        <Text>
+          {`${this.props.title} @ ${this.props.time.format('HH:mm')}`}
+        </Text>
+        <Text>
+          {formatTime(Moment().diff(this.props.time, 'seconds'))}
+        </Text>
+      </View>
+    );
+  }
+});
+
+let styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
+  header: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  dropdown: {
+    height: 20,
+    width: 200,
+    textAlign: 'center'
   },
 });
 
 AppRegistry.registerComponent('SaveTheShoes', () => SaveTheShoes);
+AppRegistry.registerComponent('TimeBox', () => TimeBox);
