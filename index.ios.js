@@ -262,7 +262,7 @@ var TimeBox = React.createClass({
     return (
       <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
         <View>
-          <Text style={{textAlign: 'center'}}>{`${this.props.title} @ ${this.props.time.format('hh:mm')}`}</Text>
+          <Text style={{textAlign: 'center'}}>{`${this.props.title} @ ${this.props.time.format('HH:mm')}`}</Text>
         </View>
 
         <View>
