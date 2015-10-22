@@ -11,7 +11,7 @@
     "lodash": "^3.10.1",
     "moment": "^2.10.6",
     "react-native": "^0.11.4",
-    "react-native-audioplayer": "^0.1.0",
+    "react-native-audioplayer": "andreaskeller/react-native-audioplayer",
     "react-native-timer-mixin": "^0.10.2"
   },
   "devDependencies": {

@@ -5,12 +5,14 @@ let Moment = require('moment');
 let TimerMixin = require('react-native-timer-mixin');
 let Dropdown = require('react-native-dropdown-android');
 let formatTime = require('./common/format-time');
+let AudioPlayer = require('react-native-audioplayer');
 
 let {
   AppRegistry,
   BackAndroid,
   StyleSheet,
   Text,
+  ToastAndroid,
   View,
 } = React;
 
@@ -124,6 +126,8 @@ let SaveTheShoes = React.createClass({
     if (this.state.timerRunning) {
       this.setState({timerRunning: false});
 
+      //TODO Need to get an alert dialog working here
+
       return;
     }
 
@@ -133,6 +137,8 @@ let SaveTheShoes = React.createClass({
 
     let timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
     this.setState({timeRemaining: Moment.duration(timeInMinutes, 'minutes')});
+
+    ToastAndroid.show('Pressure of ' + this.state.barPressure + ' bar selected', ToastAndroid.LONG)
   },
 
   decrementTimer: function() {
@@ -143,6 +149,8 @@ let SaveTheShoes = React.createClass({
     this.setState({timeRemaining: this.state.timeRemaining.subtract(1, 'second')});
 
     if(this.state.timeRemaining <= 0) {
+      AudioPlayer.play('alarm');
+
       this.setState({timerRunning: false});
     }
   },
@@ -270,7 +278,7 @@ let styles = StyleSheet.create({
     textAlign: 'center'
   },
   button: {
-    paddingTop: 20,
+    marginTop: 20,
     textAlign: 'center',
     backgroundColor: '#888888'
   },
