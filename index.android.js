@@ -8,6 +8,7 @@ let formatTime = require('./common/format-time');
 
 let {
   AppRegistry,
+  BackAndroid,
   StyleSheet,
   Text,
   View,
@@ -169,8 +170,9 @@ let SaveTheShoes = React.createClass({
     );
   },
 
-  timerScreen: function() {
+  backFromTimerScreen: function() {
     this.setState({displayTimerScreen: false});
+    this.setState({barPressure: 110});
   },
 
   modeDisplay: function() {
@@ -198,18 +200,29 @@ let SaveTheShoes = React.createClass({
     }
   },
 
+  // TODO - BackAndroid doesn't seem to be getting triggered at the moment
+  androidBack: function() {
+    BackAndroid.addEventListener('hardwareBackPress', function() {
+      if(this.state.displayTimerScreen) {
+        this.goBack();
+        return true;
+      }
+      return false;
+    });
+  },
+
   buttonGoStopBack: function() {
     if(this.state.timerRunning) {
       return (
-        <Text onPress={this.startTimer}>Stop</Text>
+        <Text style={styles.button} onPress={this.startTimer}>Stop</Text>
       );
     } else if(this.state.displayTimerScreen) {
       return (
-        <Text onPress={this.timerScreen}>Back</Text>
+        <Text style={styles.button} onPress={this.backFromTimerScreen}>Back</Text>
       );
     } else {
       return (
-        <Text onPress={this.startTimer}>Go</Text>
+        <Text style={styles.button} onPress={this.startTimer}>Go</Text>
       );
     }
   },
@@ -228,10 +241,10 @@ var TimeBox = React.createClass({
   render: function() {
     return (
       <View>
-        <Text>
+        <Text style={styles.timerHeading}>
           {`${this.props.title} @ ${this.props.time.format('HH:mm')}`}
         </Text>
-        <Text>
+        <Text style={styles.timerCountdown}>
           {formatTime(Moment().diff(this.props.time, 'seconds'))}
         </Text>
       </View>
@@ -244,10 +257,10 @@ let styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    fontSize: 16
   },
   header: {
-    fontSize: 20,
+    fontSize: 24,
     textAlign: 'center',
     margin: 10,
   },
@@ -256,6 +269,19 @@ let styles = StyleSheet.create({
     width: 200,
     textAlign: 'center'
   },
+  button: {
+    paddingTop: 20,
+    textAlign: 'center',
+    backgroundColor: '#888888'
+  },
+  timerHeading: {
+    fontSize: 16,
+    textAlign: 'center'
+  },
+  timerCountdown: {
+    fontSize: 30,
+    textAlign: 'center'
+  }
 });
 
 AppRegistry.registerComponent('SaveTheShoes', () => SaveTheShoes);
