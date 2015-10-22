@@ -187,7 +187,7 @@ let SaveTheShoes = React.createClass({
 
     return (
       <View>
-        <TimeBox time={inTime} title="Crew Entered at"></TimeBox>
+        <TimeBox time={inTime} title="Crew Entered"></TimeBox>
         <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
         <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
         <TimeBox time={outTime} title="Time Due Out"></TimeBox>
