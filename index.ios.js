@@ -1,15 +1,15 @@
 /* @flow */
 'use strict';
 
-var React = require('react-native');
-var Moment = require('moment');
-var TimerMixin = require('react-native-timer-mixin');
-var AudioPlayer = require('react-native-audioplayer');
-var _ = require('lodash');
+let React = require('react-native');
+let Moment = require('moment');
+let TimerMixin = require('react-native-timer-mixin');
+let AudioPlayer = require('react-native-audioplayer');
+let _ = require('lodash');
 
-var formatTime = require('./common/format-time');
+let formatTime = require('./common/format-time');
 
-var {
+let {
   AppRegistry,
   PickerIOS,
   Text,
@@ -20,9 +20,9 @@ var {
 } = React;
 
 
-var PickerItemIOS = PickerIOS.Item;
+let PickerItemIOS = PickerIOS.Item;
 
-var PRESSURES_AND_MINUTES = {
+let PRESSURES_AND_MINUTES = {
   '300': {
     bar: 300,
     minutes: 51,
@@ -105,11 +105,11 @@ var PRESSURES_AND_MINUTES = {
   },
 };
 
-var SaveTheShoes = React.createClass({
+let SaveTheShoes = React.createClass({
   mixins: [TimerMixin],
 
   pressure: function() {
-    var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
+    let pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
 
     return {
       pressureData: pressure,
@@ -139,7 +139,7 @@ var SaveTheShoes = React.createClass({
     this.setState({displayTimerScreen: true});
 
     // TODO make a timer for each stage (- 15 for RA time currently)
-    var timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
+    let timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
     this.setState({timeRemaining: Moment.duration(timeInMinutes, 'minutes')});
   },
 
@@ -178,11 +178,11 @@ var SaveTheShoes = React.createClass({
 
   timesRunning: function(pressure) {
     if(this.state.inTime != null){
-      var inTime = Moment(this.state.inTime);
-      var outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
+      let inTime = Moment(this.state.inTime);
+      let outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
 
-      var reliefAssemblyTime = Moment(outTime).subtract(15, 'minutes');
-      var reliefInTime = Moment(outTime).subtract(10, 'minutes');
+      let reliefAssemblyTime = Moment(outTime).subtract(15, 'minutes');
+      let reliefInTime = Moment(outTime).subtract(10, 'minutes');
     }
 
     return (
@@ -197,7 +197,7 @@ var SaveTheShoes = React.createClass({
 
   modeDisplay: function() {
     if(this.state.displayTimerScreen){
-      var pressure = this.pressure().pressureData;
+      let pressure = this.pressure().pressureData;
       return (
           <View>
           {this.timesRunning(pressure)}
@@ -242,9 +242,9 @@ var SaveTheShoes = React.createClass({
   },
 
   render: function() {
-    var pressure = this.pressure().pressureData;
-    var selectedBar = this.pressure().selectedBar;
-    var minutesOfAir = this.pressure().minutesOfAir;
+    let pressure = this.pressure().pressureData;
+    let selectedBar = this.pressure().selectedBar;
+    let minutesOfAir = this.pressure().minutesOfAir;
 
     return (
         <View style={[styles.background, styles.base,]}>
@@ -257,7 +257,7 @@ var SaveTheShoes = React.createClass({
   },
 });
 
-var TimeBox = React.createClass({
+let TimeBox = React.createClass({
   render: function() {
     return (
       <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
@@ -276,7 +276,7 @@ var TimeBox = React.createClass({
 AppRegistry.registerComponent('SaveTheShoes', () => SaveTheShoes);
 AppRegistry.registerComponent('TimeBox', () => TimeBox);
 
-var styles = ({
+let styles = ({
   base: {
     paddingTop: 25,
     paddingBottom: 25
