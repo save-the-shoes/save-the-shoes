@@ -1538,16 +1538,16 @@ timeRemaining:Moment.duration(0)};},
 
 timesRunning:function(pressure){
 if(this.state.inTime != null){
-var inTime=Moment(this.state.inTime);
-var outTime=Moment(this.state.inTime).add(pressure.minutes,'minutes');
+var _inTime=Moment(this.state.inTime);
+var _outTime=Moment(this.state.inTime).add(pressure.minutes,'minutes');
 
-var reliefAssemblyTime=Moment(outTime).subtract(15,'minutes');
-var reliefInTime=Moment(outTime).subtract(10,'minutes');}
+var _reliefAssemblyTime=Moment(_outTime).subtract(15,'minutes');
+var _reliefInTime=Moment(_outTime).subtract(10,'minutes');}
 
 
 return (
 React.createElement(View,null,
-React.createElement(TimeBox,{time:inTime,title:'Crew Entered at'}),
+React.createElement(TimeBox,{time:inTime,title:'Crew Entered'}),
 React.createElement(TimeBox,{time:reliefAssemblyTime,title:'Relief Assembly'}),
 React.createElement(TimeBox,{time:reliefInTime,title:'Relief In'}),
 React.createElement(TimeBox,{time:outTime,title:'Time Due Out'})));},
