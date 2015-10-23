@@ -22,6 +22,10 @@ let {
 
 let PickerItemIOS = PickerIOS.Item;
 
+let RELIEF_ASSEMBLY_OFFSET = 15;
+let RELIEF_IN_OFFSET = 10;
+let DUE_OUT_OFFSET = 0;
+
 let PRESSURES_AND_MINUTES = {
   '300': {
     bar: 300,
@@ -152,18 +156,29 @@ let SaveTheShoes = React.createClass({
       return false;
     }
 
-    // TODO - deltatime
     this.setState({timeRemaining: this.state.timeRemaining.subtract(1, 'second')});
 
-    if (this.state.timeRemaining <= 0) {
-      AudioPlayer.play('alarm.mp3');
+    if(this.state.inTime != null && this.state.alarmsRemaining.length > 0) {
+      var currentAlarm = this.state.alarmsRemaining[0];
+      var alarmTime = Moment(this.state.inTime).add(this.pressure().pressureData.minutes - currentAlarm.offset, 'minutes');
+      var remainingTime = Moment(alarmTime).diff(Moment(), 'seconds');
 
-      AlertIOS.alert(
-        'Beep beep',
-        "Time for relief assembly!"
-      );
+      if(remainingTime < 0) {
+        this.setState({
+          alarmsRemaining: this.state.alarmsRemaining.filter((_, i) => i !== 0)
+        })
 
-      this.setState({timerRunning: false});
+        AudioPlayer.play(currentAlarm.alarmSound);
+
+        if(currentAlarm.offset == 0){
+          // Final alarm (time due out), display popup
+          AlertIOS.alert(
+              'Beep beep',
+              "Time for relief assembly!"
+              );
+          this.setState({timerRunning: false});
+        }
+      }
     }
   },
 
@@ -172,17 +187,24 @@ let SaveTheShoes = React.createClass({
       barPressure: '110',
       timerRunning: false,
       inTime: null,
-      timeRemaining: Moment.duration(0)
+      timeRemaining: Moment.duration(0),
+      alarmsRemaining: [
+        {alarmSound: 'relief_assembly.mp3', offset: RELIEF_ASSEMBLY_OFFSET},
+        {alarmSound: 'relief_in.mp3', offset: RELIEF_IN_OFFSET},
+        {alarmSound: 'alarm.mp3', offset: DUE_OUT_OFFSET}
+      ]
     };
   },
 
   timesRunning: function(pressure) {
     if(this.state.inTime != null){
-      let inTime = Moment(this.state.inTime);
-      let outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
+      var inTime = Moment(this.state.inTime);
+      var outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
 
-      let reliefAssemblyTime = Moment(outTime).subtract(15, 'minutes');
-      let reliefInTime = Moment(outTime).subtract(10, 'minutes');
+      var reliefAssemblyTime = Moment(outTime).subtract(RELIEF_ASSEMBLY_OFFSET, 'minutes');
+      var reliefInTime = Moment(outTime).subtract(RELIEF_IN_OFFSET, 'minutes');
+
+      var nowTime = Moment();
     }
 
     return (
@@ -259,14 +281,19 @@ let SaveTheShoes = React.createClass({
 
 let TimeBox = React.createClass({
   render: function() {
+    let inactiveStyle = {}
+    if(this.props.time < Moment()) {
+      inactiveStyle.color = '#A6A6A6';
+    }
+
     return (
       <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
         <View>
-          <Text style={{textAlign: 'center'}}>{`${this.props.title} @ ${this.props.time.format('HH:mm')}`}</Text>
+          <Text style={[inactiveStyle, {textAlign: 'center'}]}>{`${this.props.title} @ ${this.props.time.format('HH:mm')}`}</Text>
         </View>
 
         <View>
-          <Text style={{textAlign: 'center', fontSize: 24}}>{formatTime(Moment().diff(this.props.time, 'seconds'))}</Text>
+          <Text style={[inactiveStyle, {textAlign: 'center', fontSize: 24}]}>{formatTime(Moment().diff(this.props.time, 'seconds'))}</Text>
         </View>
       </View>
     );
