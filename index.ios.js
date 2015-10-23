@@ -199,6 +199,8 @@ var SaveTheShoes = React.createClass({
 
       var reliefAssemblyTime = Moment(outTime).subtract(15, 'minutes');
       var reliefInTime = Moment(outTime).subtract(10, 'minutes');
+
+      var nowTime = Moment();
     }
 
     return (
@@ -275,14 +277,19 @@ var SaveTheShoes = React.createClass({
 
 var TimeBox = React.createClass({
   render: function() {
+    let inactiveStyle = {}
+    if(this.props.time < Moment()) {
+      inactiveStyle.color = '#A6A6A6';
+    }
+
     return (
       <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
         <View>
-          <Text style={{textAlign: 'center'}}>{`${this.props.title} @ ${this.props.time.format('hh:mm')}`}</Text>
+          <Text style={[inactiveStyle, {textAlign: 'center'}]}>{`${this.props.title} @ ${this.props.time.format('hh:mm')}`}</Text>
         </View>
 
         <View>
-          <Text style={{textAlign: 'center', fontSize: 24}}>{formatTime(Moment().diff(this.props.time, 'seconds'))}</Text>
+          <Text style={[inactiveStyle, {textAlign: 'center', fontSize: 24}]}>{formatTime(Moment().diff(this.props.time, 'seconds'))}</Text>
         </View>
       </View>
     );
