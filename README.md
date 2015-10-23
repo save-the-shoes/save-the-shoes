@@ -6,11 +6,17 @@ Install
 
 `npm install`
 
-Development
+Development - iOS
 ---
 
 `open ios/SaveTheShoes.xcodeproj`
 `npm run autotest`
+
+Development - Android
+---
+
+`open an Android Emulator`
+`react-native run-android`
 
 Tests
 ---
