@@ -7,3 +7,6 @@ project(':ReactNativeDropdownAndroid').projectDir = new File(rootProject.project
 
 include ':RNAudioPlayer', ':app'
 project(':RNAudioPlayer').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-audioplayer/android')
+
+include ':ReactNativeDialogAndroid', ':app'
+project(':ReactNativeDialogAndroid').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-dialog-android/android')

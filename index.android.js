@@ -4,6 +4,7 @@ let React = require('react-native');
 let Moment = require('moment');
 let TimerMixin = require('react-native-timer-mixin');
 let Dropdown = require('react-native-dropdown-android');
+let Dialog = require('react-native-dialog-android');
 let formatTime = require('./common/format-time');
 let AudioPlayer = require('react-native-audioplayer');
 
@@ -126,9 +127,9 @@ let SaveTheShoes = React.createClass({
     if (this.state.timerRunning) {
       this.setState({timerRunning: false});
 
-      //TODO Need to get an alert dialog working here
-
-      return;
+      return(
+        <Dialog message={'Are you sure you want to stop the timer?'} positiveButton={'Yes'} negativeButton={'No'} />
+      );
     }
 
     this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
@@ -265,7 +266,7 @@ let styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    fontSize: 16
+    fontSize: 20
   },
   header: {
     fontSize: 24,
