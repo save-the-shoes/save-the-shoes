@@ -198,8 +198,8 @@ let SaveTheShoes = React.createClass({
 
   timesRunning: function(pressure) {
     if(this.state.inTime != null){
-      let inTime = Moment(this.state.inTime);
-      let outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
+      var inTime = Moment(this.state.inTime);
+      var outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
 
       var reliefAssemblyTime = Moment(outTime).subtract(RELIEF_ASSEMBLY_OFFSET, 'minutes');
       var reliefInTime = Moment(outTime).subtract(RELIEF_IN_OFFSET, 'minutes');
