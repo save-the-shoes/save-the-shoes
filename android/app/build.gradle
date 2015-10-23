@@ -28,4 +28,5 @@ dependencies {
     compile 'com.facebook.react:react-native:0.11.+'
     compile project(':ReactNativeDropdownAndroid')
     compile project(':RNAudioPlayer')
+    compile project(':ReactNativeDialogAndroid')
 }
