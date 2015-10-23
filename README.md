@@ -1,4 +1,6 @@
 # save-the-shoes
+> This is the best fucking thing I have seen for our crew in the 28 years I have been a firefighter
+
 An app for calculating O2 times for fire fighters entering buildings
 
 Install
