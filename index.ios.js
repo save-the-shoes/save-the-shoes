@@ -1,15 +1,15 @@
 /* @flow */
 'use strict';
 
-var React = require('react-native');
-var Moment = require('moment');
-var TimerMixin = require('react-native-timer-mixin');
-var AudioPlayer = require('react-native-audioplayer');
-var _ = require('lodash');
+let React = require('react-native');
+let Moment = require('moment');
+let TimerMixin = require('react-native-timer-mixin');
+let AudioPlayer = require('react-native-audioplayer');
+let _ = require('lodash');
 
-var formatTime = require('./common/format-time');
+let formatTime = require('./common/format-time');
 
-var {
+let {
   AppRegistry,
   PickerIOS,
   Text,
@@ -20,9 +20,13 @@ var {
 } = React;
 
 
-var PickerItemIOS = PickerIOS.Item;
+let PickerItemIOS = PickerIOS.Item;
 
-var PRESSURES_AND_MINUTES = {
+let RELIEF_ASSEMBLY_OFFSET = 15;
+let RELIEF_IN_OFFSET = 10;
+let DUE_OUT_OFFSET = 0;
+
+let PRESSURES_AND_MINUTES = {
   '300': {
     bar: 300,
     minutes: 51,
@@ -105,11 +109,11 @@ var PRESSURES_AND_MINUTES = {
   },
 };
 
-var SaveTheShoes = React.createClass({
+let SaveTheShoes = React.createClass({
   mixins: [TimerMixin],
 
   pressure: function() {
-    var pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
+    let pressure = PRESSURES_AND_MINUTES[this.state.barPressure];
 
     return {
       pressureData: pressure,
@@ -139,7 +143,7 @@ var SaveTheShoes = React.createClass({
     this.setState({displayTimerScreen: true});
 
     // TODO make a timer for each stage (- 15 for RA time currently)
-    var timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
+    let timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
     this.setState({timeRemaining: Moment.duration(timeInMinutes, 'minutes')});
   },
 
@@ -185,9 +189,9 @@ var SaveTheShoes = React.createClass({
       inTime: null,
       timeRemaining: Moment.duration(0),
       alarmsRemaining: [
-        {alarmSound: 'relief_assembly.mp3', offset: 15},
-        {alarmSound: 'relief_in.mp3', offset: 10},
-        {alarmSound: 'alarm.mp3', offset: 0}
+        {alarmSound: 'relief_assembly.mp3', offset: RELIEF_ASSEMBLY_OFFSET},
+        {alarmSound: 'relief_in.mp3', offset: RELIEF_IN_OFFSET},
+        {alarmSound: 'alarm.mp3', offset: DUE_OUT_OFFSET}
       ]
     };
   },
@@ -197,15 +201,15 @@ var SaveTheShoes = React.createClass({
       var inTime = Moment(this.state.inTime);
       var outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
 
-      var reliefAssemblyTime = Moment(outTime).subtract(15, 'minutes');
-      var reliefInTime = Moment(outTime).subtract(10, 'minutes');
+      var reliefAssemblyTime = Moment(outTime).subtract(RELIEF_ASSEMBLY_OFFSET, 'minutes');
+      var reliefInTime = Moment(outTime).subtract(RELIEF_IN_OFFSET, 'minutes');
 
       var nowTime = Moment();
     }
 
     return (
       <View>
-        <TimeBox time={inTime} title="Crew Entered at"></TimeBox>
+        <TimeBox time={inTime} title="Crew Entered"></TimeBox>
         <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
         <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
         <TimeBox time={outTime} title="Time Due Out"></TimeBox>
@@ -215,7 +219,7 @@ var SaveTheShoes = React.createClass({
 
   modeDisplay: function() {
     if(this.state.displayTimerScreen){
-      var pressure = this.pressure().pressureData;
+      let pressure = this.pressure().pressureData;
       return (
           <View>
           {this.timesRunning(pressure)}
@@ -260,9 +264,9 @@ var SaveTheShoes = React.createClass({
   },
 
   render: function() {
-    var pressure = this.pressure().pressureData;
-    var selectedBar = this.pressure().selectedBar;
-    var minutesOfAir = this.pressure().minutesOfAir;
+    let pressure = this.pressure().pressureData;
+    let selectedBar = this.pressure().selectedBar;
+    let minutesOfAir = this.pressure().minutesOfAir;
 
     return (
         <View style={[styles.background, styles.base,]}>
@@ -275,7 +279,7 @@ var SaveTheShoes = React.createClass({
   },
 });
 
-var TimeBox = React.createClass({
+let TimeBox = React.createClass({
   render: function() {
     let inactiveStyle = {}
     if(this.props.time < Moment()) {
@@ -285,7 +289,11 @@ var TimeBox = React.createClass({
     return (
       <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
         <View>
+<<<<<<< HEAD
           <Text style={[inactiveStyle, {textAlign: 'center'}]}>{`${this.props.title} @ ${this.props.time.format('hh:mm')}`}</Text>
+=======
+          <Text style={{textAlign: 'center'}}>{`${this.props.title} @ ${this.props.time.format('HH:mm')}`}</Text>
+>>>>>>> master
         </View>
 
         <View>
@@ -299,7 +307,7 @@ var TimeBox = React.createClass({
 AppRegistry.registerComponent('SaveTheShoes', () => SaveTheShoes);
 AppRegistry.registerComponent('TimeBox', () => TimeBox);
 
-var styles = ({
+let styles = ({
   base: {
     paddingTop: 25,
     paddingBottom: 25
