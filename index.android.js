@@ -128,6 +128,8 @@ let SaveTheShoes = React.createClass({
 
       //TODO Need to get an alert dialog working here
 
+      ToastAndroid.show('Timer stopped', ToastAndroid.LONG);
+
       return;
     }
 
@@ -138,7 +140,7 @@ let SaveTheShoes = React.createClass({
     let timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
     this.setState({timeRemaining: Moment.duration(timeInMinutes, 'minutes')});
 
-    ToastAndroid.show('Pressure of ' + this.state.barPressure + ' bar selected', ToastAndroid.LONG)
+    ToastAndroid.show('Pressure of ' + this.state.barPressure + ' bar selected', ToastAndroid.LONG);
   },
 
   decrementTimer: function() {
@@ -188,7 +190,7 @@ let SaveTheShoes = React.createClass({
       let pressure = this.pressure().pressureData;
 
       return (
-        <View>
+        <View style={styles.timerScreen}>
           {this.timesRunning(pressure)}
         </View>
       );
@@ -262,6 +264,7 @@ var TimeBox = React.createClass({
 
 let styles = StyleSheet.create({
   container: {
+    paddingTop: 20,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -279,8 +282,12 @@ let styles = StyleSheet.create({
   },
   button: {
     marginTop: 20,
+    fontSize: 20,
     textAlign: 'center',
-    backgroundColor: '#888888'
+    backgroundColor: '#999999'
+  },
+  timerScreen: {
+    paddingTop: 20
   },
   timerHeading: {
     fontSize: 16,
