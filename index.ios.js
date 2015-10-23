@@ -22,7 +22,11 @@ var {
 
 var PickerItemIOS = PickerIOS.Item;
 
-var PRESSURES_AND_MINUTES = {
+let RELIEF_ASSEMBLY_OFFSET = 15;
+let RELIEF_IN_OFFSET = 10;
+let DUE_OUT_OFFSET = 0;
+
+let PRESSURES_AND_MINUTES = {
   '300': {
     bar: 300,
     minutes: 51,
@@ -185,9 +189,9 @@ var SaveTheShoes = React.createClass({
       inTime: null,
       timeRemaining: Moment.duration(0),
       alarmsRemaining: [
-        {alarmSound: 'relief_assembly.mp3', offset: 15},
-        {alarmSound: 'relief_in.mp3', offset: 10},
-        {alarmSound: 'alarm.mp3', offset: 0}
+        {alarmSound: 'relief_assembly.mp3', offset: RELIEF_ASSEMBLY_OFFSET},
+        {alarmSound: 'relief_in.mp3', offset: RELIEF_IN_OFFSET},
+        {alarmSound: 'alarm.mp3', offset: DUE_OUT_OFFSET}
       ]
     };
   },
@@ -197,8 +201,8 @@ var SaveTheShoes = React.createClass({
       var inTime = Moment(this.state.inTime);
       var outTime = Moment(this.state.inTime).add(pressure.minutes, 'minutes');
 
-      var reliefAssemblyTime = Moment(outTime).subtract(15, 'minutes');
-      var reliefInTime = Moment(outTime).subtract(10, 'minutes');
+      var reliefAssemblyTime = Moment(outTime).subtract(RELIEF_ASSEMBLY_OFFSET, 'minutes');
+      var reliefInTime = Moment(outTime).subtract(RELIEF_IN_OFFSET, 'minutes');
     }
 
     return (
