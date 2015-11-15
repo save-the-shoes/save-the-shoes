@@ -174,7 +174,7 @@ let SaveTheShoes = React.createClass({
           // Final alarm (time due out), display popup
           AlertIOS.alert(
               'Beep beep',
-              "Time for relief assembly!"
+              "Crew due out now!"
               );
           this.setState({timerRunning: false});
         }
