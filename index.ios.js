@@ -209,7 +209,7 @@ let SaveTheShoes = React.createClass({
 
     return (
       <View>
-        <TimeBox time={inTime} title="Crew Entered"></TimeBox>
+        <TimeBox time={inTime} always_active={true} title="Crew Entered"></TimeBox>
         <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
         <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
         <TimeBox time={outTime} title="Time Due Out"></TimeBox>
@@ -282,7 +282,7 @@ let SaveTheShoes = React.createClass({
 let TimeBox = React.createClass({
   render: function() {
     let inactiveStyle = {}
-    if(this.props.time < Moment()) {
+    if(this.props.time < Moment() && !this.props.always_active) {
       inactiveStyle.color = '#A6A6A6';
     }
 
