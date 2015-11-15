@@ -138,13 +138,18 @@ let SaveTheShoes = React.createClass({
       return;
     }
 
-    this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
-
-    this.setState({displayTimerScreen: true});
-
-    // TODO make a timer for each stage (- 15 for RA time currently)
     let timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
-    this.setState({timeRemaining: Moment.duration(timeInMinutes, 'minutes')});
+    this.setState({
+      timerRunning: !this.state.timerRunning,
+      inTime: Moment(),
+      displayTimerScreen: true,
+      timeRemaining: Moment.duration(timeInMinutes, 'minutes'),
+      alarmsRemaining: [
+        {alarmSound: 'relief_assembly.mp3', offset: RELIEF_ASSEMBLY_OFFSET},
+        {alarmSound: 'relief_in.mp3', offset: RELIEF_IN_OFFSET},
+        {alarmSound: 'alarm.mp3', offset: DUE_OUT_OFFSET}
+      ]
+    });
   },
 
   timerScreen: function() {
@@ -188,11 +193,7 @@ let SaveTheShoes = React.createClass({
       timerRunning: false,
       inTime: null,
       timeRemaining: Moment.duration(0),
-      alarmsRemaining: [
-        {alarmSound: 'relief_assembly.mp3', offset: RELIEF_ASSEMBLY_OFFSET},
-        {alarmSound: 'relief_in.mp3', offset: RELIEF_IN_OFFSET},
-        {alarmSound: 'alarm.mp3', offset: DUE_OUT_OFFSET}
-      ]
+      alarmsRemaining: []
     };
   },
 
