@@ -290,11 +290,11 @@ let TimeBox = React.createClass({
     return (
       <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
         <View>
-          <Text style={[inactiveStyle, {textAlign: 'center'}]}>{`${this.props.title} @ ${this.props.time.format('HH:mm')}`}</Text>
+          <Text style={[inactiveStyle, {textAlign: 'center', fontSize: 24}]}>{`${this.props.title} @ ${this.props.time.format('HH:mm')}`}</Text>
         </View>
 
         <View>
-          <Text style={[inactiveStyle, {textAlign: 'center', fontSize: 24}]}>{formatTime(Moment().diff(this.props.time, 'seconds'))}</Text>
+          <Text style={[inactiveStyle, {textAlign: 'center', fontSize: 42}]}>{formatTime(Moment().diff(this.props.time, 'seconds'))}</Text>
         </View>
       </View>
     );
@@ -313,7 +313,7 @@ let styles = ({
   header: {
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 18
+    fontSize: 30
   },
 
   pickerIOS: {
@@ -330,7 +330,7 @@ let styles = ({
     padding: 20,
     width: 200,
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 30,
   },
 
   buttonGo: {
