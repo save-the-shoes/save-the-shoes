@@ -23,6 +23,9 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		9151D08E1C5035A5005D8163 /* libRNAudioPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9151D08B1C503579005D8163 /* libRNAudioPlayer.a */; };
+		91EE06841C503D33008C6389 /* relief_assembly.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06811C503D33008C6389 /* relief_assembly.mp3 */; };
+		91EE06851C503D33008C6389 /* relief_in.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06821C503D33008C6389 /* relief_in.mp3 */; };
+		91EE06861C503D33008C6389 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06831C503D33008C6389 /* alarm.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,7 +123,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -143,6 +145,9 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		9151D0791C503538005D8163 /* node_modules */ = {isa = PBXFileReference; lastKnownFileType = folder; name = node_modules; path = ../node_modules; sourceTree = "<group>"; };
 		9151D0851C503579005D8163 /* RNAudioPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNAudioPlayer.xcodeproj; path = "../node_modules/react-native-audioplayer/RNAudioPlayer.xcodeproj"; sourceTree = "<group>"; };
+		91EE06811C503D33008C6389 /* relief_assembly.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = relief_assembly.mp3; sourceTree = "<group>"; };
+		91EE06821C503D33008C6389 /* relief_in.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = relief_in.mp3; sourceTree = "<group>"; };
+		91EE06831C503D33008C6389 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,7 +255,9 @@
 		13B07FAE1A68108700A75B9A /* SaveTheShoes */ = {
 			isa = PBXGroup;
 			children = (
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
+				91EE06811C503D33008C6389 /* relief_assembly.mp3 */,
+				91EE06821C503D33008C6389 /* relief_in.mp3 */,
+				91EE06831C503D33008C6389 /* alarm.mp3 */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -553,8 +560,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91EE06851C503D33008C6389 /* relief_in.mp3 in Resources */,
+				91EE06841C503D33008C6389 /* relief_assembly.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				91EE06861C503D33008C6389 /* alarm.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
