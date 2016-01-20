@@ -26,6 +26,7 @@
 		91EE06841C503D33008C6389 /* relief_assembly.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06811C503D33008C6389 /* relief_assembly.mp3 */; };
 		91EE06851C503D33008C6389 /* relief_in.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06821C503D33008C6389 /* relief_in.mp3 */; };
 		91EE06861C503D33008C6389 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06831C503D33008C6389 /* alarm.mp3 */; };
+		CC7822E01C50491000E176BD /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7822DF1C50490F00E176BD /* DeviceUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,8 @@
 		91EE06811C503D33008C6389 /* relief_assembly.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = relief_assembly.mp3; sourceTree = "<group>"; };
 		91EE06821C503D33008C6389 /* relief_in.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = relief_in.mp3; sourceTree = "<group>"; };
 		91EE06831C503D33008C6389 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
+		CC7822DE1C50490E00E176BD /* DeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceUtil.h; sourceTree = "<group>"; };
+		CC7822DF1C50490F00E176BD /* DeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +315,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				CC7822DE1C50490E00E176BD /* DeviceUtil.h */,
+				CC7822DF1C50490F00E176BD /* DeviceUtil.m */,
 				9151D0851C503579005D8163 /* RNAudioPlayer.xcodeproj */,
 				9151D0791C503538005D8163 /* node_modules */,
 				13B07FAE1A68108700A75B9A /* SaveTheShoes */,
@@ -613,6 +618,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7822E01C50491000E176BD /* DeviceUtil.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
