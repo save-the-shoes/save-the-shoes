@@ -335,7 +335,7 @@ let styles = ({
   header: {
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 30,
+    fontSize: 20,
   },
 
   teamName: {
