@@ -146,8 +146,8 @@ let TeamTimer = React.createClass({
       displayTimerScreen: true,
       timeRemaining: Moment.duration(timeInMinutes, 'minutes'),
       alarmsRemaining: [
-        {alarmSound: 'relief_assembly.mp3', offset: RELIEF_ASSEMBLY_OFFSET},
-        {alarmSound: 'relief_in.mp3', offset: RELIEF_IN_OFFSET},
+        {alarmSound: `team_${this.props.teamNumber}_relief_assemble.mp3`, offset: RELIEF_ASSEMBLY_OFFSET},
+        {alarmSound: `team_${this.props.teamNumber}_relief_in.mp3`, offset: RELIEF_IN_OFFSET},
         {alarmSound: 'alarm.mp3', offset: DUE_OUT_OFFSET}
       ]
     });
@@ -211,7 +211,7 @@ let TeamTimer = React.createClass({
 
     return (
       <View>
-        <Text style={styles.header}>{this.props.teamName}</Text>
+        <Text style={styles.header}>Team {this.props.teamNumber}</Text>
         <TimeBox time={inTime} always_active={true} title="Crew Entered"></TimeBox>
         <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
         <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
@@ -231,7 +231,7 @@ let TeamTimer = React.createClass({
     }else{
       return (
         <View>
-          <Text style={styles.header}>{this.props.teamName}</Text>
+          <Text style={styles.header}>Team {this.props.teamNumber}</Text>
           <Text style={styles.header}>Select Cylinder Pressure</Text>
           <PickerIOS
             style={styles.pickerIOS}
@@ -308,15 +308,15 @@ let SaveTheShoes = React.createClass({
     if (Device.isIpad()) {
       return (
         <View style={{flex: 1, flexDirection: 'row'}} horizontal={true}>
-          <TeamTimer teamName={"Team 1"}/>
-          <TeamTimer teamName={"Team 2"}/>
-          <TeamTimer teamName={"Team 3"}/>
-          <TeamTimer teamName={"Team 4"}/>
+          <TeamTimer teamNumber={1}/>
+          <TeamTimer teamNumber={2}/>
+          <TeamTimer teamNumber={3}/>
+          <TeamTimer teamNumber={4}/>
         </View>
       );
     } else {
       return (
-        <TeamTimer />
+        <TeamTimer teamNumber={1}/>
       );
     }
   }
