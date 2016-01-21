@@ -231,8 +231,8 @@ let TeamTimer = React.createClass({
     }else{
       return (
         <View>
-          <Text style={styles.header}>Team {this.props.teamNumber}</Text>
-          <Text style={styles.header}>Select Cylinder Pressure</Text>
+          <Text style={styles.teamName}>Team {this.props.teamNumber}</Text>
+          <Text style={styles.header}>Cylinder Pressure</Text>
           <PickerIOS
             style={styles.pickerIOS}
             selectedValue={this.state.barPressure}
@@ -335,7 +335,13 @@ let styles = ({
   header: {
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 30
+    fontSize: 30,
+  },
+
+  teamName: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 30,
   },
 
   pickerIOS: {
