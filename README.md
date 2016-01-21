@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/save-the-shoes/save-the-shoes.png?label=ready&title=Ready)](https://waffle.io/save-the-shoes/save-the-shoes)
 # save-the-shoes
 > This is the best fucking thing I have seen for our crew in the 28 years I have been a firefighter
 
