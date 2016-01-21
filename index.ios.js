@@ -230,6 +230,7 @@ let TeamTimer = React.createClass({
     }else{
       return (
         <View>
+          <Text style={styles.header}>{this.props.teamName}</Text>
           <Text style={styles.header}>Select Cylinder Pressure</Text>
           <PickerIOS
             style={styles.pickerIOS}
@@ -306,10 +307,10 @@ let SaveTheShoes = React.createClass({
     if (Device.isIpad()) {
       return (
         <View style={{flex: 1, flexDirection: 'row'}} horizontal={true}>
-          <TeamTimer />
-          <TeamTimer />
-          <TeamTimer />
-          <TeamTimer />
+          <TeamTimer teamName={"Team 1"}/>
+          <TeamTimer teamName={"Team 2"}/>
+          <TeamTimer teamName={"Team 3"}/>
+          <TeamTimer teamName={"Team 4"}/>
         </View>
       );
     } else {
