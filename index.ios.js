@@ -5,6 +5,7 @@ let React = require('react-native');
 let Moment = require('moment');
 let TimerMixin = require('react-native-timer-mixin');
 let AudioPlayer = require('react-native-audioplayer');
+let Device = require('react-native-device');
 let _ = require('lodash');
 
 let formatTime = require('./common/format-time');
@@ -109,7 +110,7 @@ let PRESSURES_AND_MINUTES = {
   },
 };
 
-let SaveTheShoes = React.createClass({
+let TeamTimer = React.createClass({
   mixins: [TimerMixin],
 
   pressure: function() {
@@ -178,9 +179,9 @@ let SaveTheShoes = React.createClass({
         if(currentAlarm.offset == 0){
           // Final alarm (time due out), display popup
           AlertIOS.alert(
-              'Beep beep',
-              "Crew due out now!"
-              );
+            'Beep beep',
+            "Crew due out now!"
+          );
           this.setState({timerRunning: false});
         }
       }
@@ -228,23 +229,23 @@ let SaveTheShoes = React.createClass({
           );
     }else{
       return (
-          <View>
+        <View>
+          <Text style={styles.header}>{this.props.teamName}</Text>
           <Text style={styles.header}>Select Cylinder Pressure</Text>
           <PickerIOS
-          style={styles.pickerIOS}
-          selectedValue={this.state.barPressure}
-          onValueChange={(barPressure) => this.setState({barPressure})}>
-          {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
-                <PickerItemIOS
+            style={styles.pickerIOS}
+            selectedValue={this.state.barPressure}
+            onValueChange={(barPressure) => this.setState({barPressure})}>
+            {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) =>
+              <PickerItemIOS
                 key={barPressure}
                 value={barPressure}
                 label={PRESSURES_AND_MINUTES[barPressure].bar.toString()}
-                />
-                )
-              )}
+              />
+            )}
           </PickerIOS>
-          </View>
-          );
+        </View>
+      );
     }
   },
 
@@ -301,8 +302,28 @@ let TimeBox = React.createClass({
   }
 });
 
+let SaveTheShoes = React.createClass({
+  render: function() {
+    if (Device.isIpad()) {
+      return (
+        <View style={{flex: 1, flexDirection: 'row'}} horizontal={true}>
+          <TeamTimer teamName={"Team 1"}/>
+          <TeamTimer teamName={"Team 2"}/>
+          <TeamTimer teamName={"Team 3"}/>
+          <TeamTimer teamName={"Team 4"}/>
+        </View>
+      );
+    } else {
+      return (
+        <TeamTimer />
+      );
+    }
+  }
+});
+
 AppRegistry.registerComponent('SaveTheShoes', () => SaveTheShoes);
 AppRegistry.registerComponent('TimeBox', () => TimeBox);
+AppRegistry.registerComponent('TeamTimer', () => TeamTimer);
 
 let styles = ({
   base: {
@@ -321,7 +342,10 @@ let styles = ({
 
   background: {
     backgroundColor: '#EFEFEF',
-    flex: 1
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#DEDEDE',
+    padding: 6
   },
 
   button: {

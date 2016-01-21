@@ -12,6 +12,7 @@
     "moment": "^2.10.6",
     "react-native": "^0.18.1",
     "react-native-audioplayer": "andreaskeller/react-native-audioplayer",
+    "react-native-device": "^1.0.1",
     "react-native-timer-mixin": "^0.10.2"
   },
   "devDependencies": {
