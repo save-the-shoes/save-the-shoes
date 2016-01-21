@@ -211,6 +211,7 @@ let TeamTimer = React.createClass({
 
     return (
       <View>
+        <Text style={styles.header}>{this.props.teamName}</Text>
         <TimeBox time={inTime} always_active={true} title="Crew Entered"></TimeBox>
         <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
         <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
