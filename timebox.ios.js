@@ -1,3 +1,5 @@
+'use strict';
+
 let React = require('react-native');
 let Moment = require('moment');
 let formatTime = require('./common/format-time');

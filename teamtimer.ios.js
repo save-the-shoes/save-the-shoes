@@ -1,3 +1,5 @@
+'use strict';
+
 let React = require('react-native');
 let TimerMixin = require('react-native-timer-mixin');
 let Moment = require('moment');

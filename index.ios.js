@@ -6,22 +6,17 @@ let Device = require('react-native-device');
 let _ = require('lodash');
 
 let TeamTimer = require('./teamtimer.ios.js');
+let MultiTeamTimer = require('./multiteamtimer.ios.js');
 
 let {
   AppRegistry,
-  View,
 } = React;
 
 let SaveTheShoes = React.createClass({
   render: function() {
     if (Device.isIpad()) {
       return (
-        <View style={{flex: 1, flexDirection: 'row'}} horizontal={true}>
-          <TeamTimer teamNumber={1}/>
-          <TeamTimer teamNumber={2}/>
-          <TeamTimer teamNumber={3}/>
-          <TeamTimer teamNumber={4}/>
-        </View>
+        <MultiTeamTimer />
       );
     } else {
       return (
