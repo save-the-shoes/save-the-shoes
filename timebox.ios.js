@@ -3,6 +3,7 @@
 let React = require('react-native');
 let Moment = require('moment');
 let formatTime = require('./common/format-time');
+let styles = require('./styles.ios.js');
 
 let {
   View,

@@ -5,6 +5,8 @@ let TimerMixin = require('react-native-timer-mixin');
 let Moment = require('moment');
 let AudioPlayer = require('react-native-audioplayer');
 let TimeBox = require('./timebox.ios.js');
+let TeamName = require('./teamname.ios.js');
+let styles = require('./styles.ios.js');
 
 let {
   PickerIOS,
@@ -12,7 +14,7 @@ let {
   View,
   TouchableHighlight,
   AlertIOS,
-  PushNotificationIOS
+  PushNotificationIOS,
 } = React;
 
 let PickerItemIOS = PickerIOS.Item;
@@ -205,7 +207,7 @@ let TeamTimer = React.createClass({
 
     return (
       <View>
-        <Text style={styles.header}>Team {this.props.teamNumber}</Text>
+        <TeamName teamNumber={this.props.teamNumber} />
         <TimeBox time={inTime} always_active={true} title="Crew Entered"></TimeBox>
         <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
         <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
@@ -225,20 +227,22 @@ let TeamTimer = React.createClass({
     }else{
       return (
         <View>
-          <Text style={styles.header}>Team {this.props.teamNumber}</Text>
-          <Text style={styles.header}>Select Cylinder Pressure</Text>
-          <PickerIOS
-            style={styles.pickerIOS}
-            selectedValue={this.state.barPressure}
-            onValueChange={(barPressure) => this.setState({barPressure})}>
-            {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) =>
-              <PickerItemIOS
-                key={barPressure}
-                value={barPressure}
-                label={PRESSURES_AND_MINUTES[barPressure].bar.toString()}
-              />
-            )}
-          </PickerIOS>
+          <TeamName teamNumber={this.props.teamNumber}/>
+          <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
+            <Text style={styles.header}>Cylinder Pressure</Text>
+            <PickerIOS
+              style={styles.pickerIOS}
+              selectedValue={this.state.barPressure}
+              onValueChange={(barPressure) => this.setState({barPressure})}>
+              {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) =>
+                <PickerItemIOS
+                  key={barPressure}
+                  value={barPressure}
+                  label={PRESSURES_AND_MINUTES[barPressure].bar.toString()}
+                />
+              )}
+            </PickerIOS>
+          </View>
         </View>
       );
     }
@@ -274,53 +278,6 @@ let TeamTimer = React.createClass({
         </View>
         );
   },
-})
-
-let styles = ({
-  base: {
-    paddingTop: 25,
-    paddingBottom: 25
-  },
-
-  header: {
-    fontWeight: 'bold',
-    textAlign: 'center',
-    fontSize: 30
-  },
-
-  pickerIOS: {
-  },
-
-  background: {
-    backgroundColor: '#EFEFEF',
-    flex: 1,
-    borderWidth: 1,
-    borderColor: '#DEDEDE',
-    padding: 6
-  },
-
-  button: {
-    color: '#FFFFFF',
-    backgroundColor: '#007AFF',
-    padding: 20,
-    width: 200,
-    textAlign: 'center',
-    fontSize: 30,
-  },
-
-  buttonGo: {
-    backgroundColor: '#009933',
-  },
-
-  buttonStop: {
-    backgroundColor: '#E60000',
-  },
-
-  buttonContainer: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  }
 })
 
 module.exports = TeamTimer;
