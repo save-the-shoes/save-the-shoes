@@ -5,6 +5,7 @@ let React = require('react-native');
 let Moment = require('moment');
 let TimerMixin = require('react-native-timer-mixin');
 let AudioPlayer = require('react-native-audioplayer');
+let Device = require('react-native-device');
 let _ = require('lodash');
 
 let formatTime = require('./common/format-time');
@@ -109,7 +110,7 @@ let PRESSURES_AND_MINUTES = {
   },
 };
 
-let SaveTheShoes = React.createClass({
+let TeamTimer = React.createClass({
   mixins: [TimerMixin],
 
   pressure: function() {
@@ -138,13 +139,18 @@ let SaveTheShoes = React.createClass({
       return;
     }
 
-    this.setState({timerRunning: !this.state.timerRunning, inTime: Moment()});
-
-    this.setState({displayTimerScreen: true});
-
-    // TODO make a timer for each stage (- 15 for RA time currently)
     let timeInMinutes = PRESSURES_AND_MINUTES[this.state.barPressure].minutes - 15;
-    this.setState({timeRemaining: Moment.duration(timeInMinutes, 'minutes')});
+    this.setState({
+      timerRunning: !this.state.timerRunning,
+      inTime: Moment(),
+      displayTimerScreen: true,
+      timeRemaining: Moment.duration(timeInMinutes, 'minutes'),
+      alarmsRemaining: [
+        {alarmSound: `team_${this.props.teamNumber}_relief_assemble.mp3`, offset: RELIEF_ASSEMBLY_OFFSET},
+        {alarmSound: `team_${this.props.teamNumber}_relief_in.mp3`, offset: RELIEF_IN_OFFSET},
+        {alarmSound: 'alarm.mp3', offset: DUE_OUT_OFFSET}
+      ]
+    });
   },
 
   timerScreen: function() {
@@ -173,9 +179,9 @@ let SaveTheShoes = React.createClass({
         if(currentAlarm.offset == 0){
           // Final alarm (time due out), display popup
           AlertIOS.alert(
-              'Beep beep',
-              "Time for relief assembly!"
-              );
+            'Beep beep',
+            "Crew due out now!"
+          );
           this.setState({timerRunning: false});
         }
       }
@@ -188,11 +194,7 @@ let SaveTheShoes = React.createClass({
       timerRunning: false,
       inTime: null,
       timeRemaining: Moment.duration(0),
-      alarmsRemaining: [
-        {alarmSound: 'relief_assembly.mp3', offset: RELIEF_ASSEMBLY_OFFSET},
-        {alarmSound: 'relief_in.mp3', offset: RELIEF_IN_OFFSET},
-        {alarmSound: 'alarm.mp3', offset: DUE_OUT_OFFSET}
-      ]
+      alarmsRemaining: []
     };
   },
 
@@ -209,7 +211,8 @@ let SaveTheShoes = React.createClass({
 
     return (
       <View>
-        <TimeBox time={inTime} title="Crew Entered"></TimeBox>
+        <Text style={styles.header}>Team {this.props.teamNumber}</Text>
+        <TimeBox time={inTime} always_active={true} title="Crew Entered"></TimeBox>
         <TimeBox time={reliefAssemblyTime} title="Relief Assembly"></TimeBox>
         <TimeBox time={reliefInTime} title="Relief In"></TimeBox>
         <TimeBox time={outTime} title="Time Due Out"></TimeBox>
@@ -227,23 +230,23 @@ let SaveTheShoes = React.createClass({
           );
     }else{
       return (
-          <View>
-          <Text style={styles.header}>Select Cylinder Pressure</Text>
+        <View>
+          <Text style={styles.teamName}>Team {this.props.teamNumber}</Text>
+          <Text style={styles.header}>Cylinder Pressure</Text>
           <PickerIOS
-          style={styles.pickerIOS}
-          selectedValue={this.state.barPressure}
-          onValueChange={(barPressure) => this.setState({barPressure})}>
-          {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) => (
-                <PickerItemIOS
+            style={styles.pickerIOS}
+            selectedValue={this.state.barPressure}
+            onValueChange={(barPressure) => this.setState({barPressure})}>
+            {Object.keys(PRESSURES_AND_MINUTES).map((barPressure) =>
+              <PickerItemIOS
                 key={barPressure}
                 value={barPressure}
                 label={PRESSURES_AND_MINUTES[barPressure].bar.toString()}
-                />
-                )
-              )}
+              />
+            )}
           </PickerIOS>
-          </View>
-          );
+        </View>
+      );
     }
   },
 
@@ -282,26 +285,46 @@ let SaveTheShoes = React.createClass({
 let TimeBox = React.createClass({
   render: function() {
     let inactiveStyle = {}
-    if(this.props.time < Moment()) {
+    if(this.props.time < Moment() && !this.props.always_active) {
       inactiveStyle.color = '#A6A6A6';
     }
 
     return (
       <View style={{borderTopWidth: 1, borderTopColor: '#C2C2D6', padding: 10}}>
         <View>
-          <Text style={[inactiveStyle, {textAlign: 'center'}]}>{`${this.props.title} @ ${this.props.time.format('HH:mm')}`}</Text>
+          <Text style={[inactiveStyle, {textAlign: 'center', fontSize: 24}]}>{`${this.props.title} @ ${this.props.time.format('HH:mm')}`}</Text>
         </View>
 
         <View>
-          <Text style={[inactiveStyle, {textAlign: 'center', fontSize: 24}]}>{formatTime(Moment().diff(this.props.time, 'seconds'))}</Text>
+          <Text style={[inactiveStyle, {textAlign: 'center', fontSize: 42}]}>{formatTime(Moment().diff(this.props.time, 'seconds'))}</Text>
         </View>
       </View>
     );
   }
 });
 
+let SaveTheShoes = React.createClass({
+  render: function() {
+    if (Device.isIpad()) {
+      return (
+        <View style={{flex: 1, flexDirection: 'row'}} horizontal={true}>
+          <TeamTimer teamNumber={1}/>
+          <TeamTimer teamNumber={2}/>
+          <TeamTimer teamNumber={3}/>
+          <TeamTimer teamNumber={4}/>
+        </View>
+      );
+    } else {
+      return (
+        <TeamTimer teamNumber={1}/>
+      );
+    }
+  }
+});
+
 AppRegistry.registerComponent('SaveTheShoes', () => SaveTheShoes);
 AppRegistry.registerComponent('TimeBox', () => TimeBox);
+AppRegistry.registerComponent('TeamTimer', () => TeamTimer);
 
 let styles = ({
   base: {
@@ -312,7 +335,13 @@ let styles = ({
   header: {
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 18
+    fontSize: 20,
+  },
+
+  teamName: {
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 30,
   },
 
   pickerIOS: {
@@ -320,7 +349,10 @@ let styles = ({
 
   background: {
     backgroundColor: '#EFEFEF',
-    flex: 1
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#DEDEDE',
+    padding: 6
   },
 
   button: {
@@ -329,7 +361,7 @@ let styles = ({
     padding: 20,
     width: 200,
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 30,
   },
 
   buttonGo: {
