@@ -13,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* SaveTheShoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SaveTheShoesTests.m */; };
+		078862054CA1EB3CA8CF84C8 /* libPods-SaveTheShoesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D94517DFE3BD172CBC8FB56 /* libPods-SaveTheShoesTests.a */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -20,19 +21,38 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		239BF013B33E4919A3784F7B /* libRNDeviceInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C868D4BA4A240F3870CAD17 /* libRNDeviceInfo.a */; };
+		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2D02E4C21E0B4AEC006451C7 /* libRCTAnimation-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157351DD0AC6500FF2AA8 /* libRCTAnimation-tvOS.a */; };
+		2D02E4C31E0B4AEC006451C7 /* libRCTImage-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */; };
+		2D02E4C41E0B4AEC006451C7 /* libRCTLinking-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E881DF850E9000B6D8A /* libRCTLinking-tvOS.a */; };
+		2D02E4C51E0B4AEC006451C7 /* libRCTNetwork-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E8C1DF850E9000B6D8A /* libRCTNetwork-tvOS.a */; };
+		2D02E4C61E0B4AEC006451C7 /* libRCTSettings-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E901DF850E9000B6D8A /* libRCTSettings-tvOS.a */; };
+		2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E941DF850E9000B6D8A /* libRCTText-tvOS.a */; };
+		2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */; };
+		2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
+		2D6C6AF080BD4F43A0E14F42 /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2990E2ABCA45DCB7CBF8C1 /* libRNSound.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* SaveTheShoesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SaveTheShoesTests.m */; };
+		5A439C85ED53F829D76665DA /* libPods-SaveTheShoes-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24793D31640B33EE3D738BE1 /* libPods-SaveTheShoes-tvOS.a */; };
+		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		9151D08E1C5035A5005D8163 /* libRNAudioPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9151D08B1C503579005D8163 /* libRNAudioPlayer.a */; };
-		91EE06861C503D33008C6389 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06831C503D33008C6389 /* alarm.mp3 */; };
-		91EE06E61C5071D1008C6389 /* team_3_relief_in.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06DE1C5071D1008C6389 /* team_3_relief_in.mp3 */; };
-		91EE06E71C5071D1008C6389 /* team_4_relief_assemble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06DF1C5071D1008C6389 /* team_4_relief_assemble.mp3 */; };
-		91EE06E81C5071D1008C6389 /* team_4_relief_in.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06E01C5071D1008C6389 /* team_4_relief_in.mp3 */; };
-		91EE06E91C5071D1008C6389 /* team_1_relief_assemble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06E11C5071D1008C6389 /* team_1_relief_assemble.mp3 */; };
-		91EE06EA1C5071D1008C6389 /* team_1_relief_in.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06E21C5071D1008C6389 /* team_1_relief_in.mp3 */; };
-		91EE06EB1C5071D1008C6389 /* team_2_relief_assemble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06E31C5071D1008C6389 /* team_2_relief_assemble.mp3 */; };
-		91EE06EC1C5071D1008C6389 /* team_2_relief_in.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06E41C5071D1008C6389 /* team_2_relief_in.mp3 */; };
-		91EE06ED1C5071D1008C6389 /* team_3_relief_assemble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 91EE06E51C5071D1008C6389 /* team_3_relief_assemble.mp3 */; };
-		CC7822E01C50491000E176BD /* DeviceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7822DF1C50490F00E176BD /* DeviceUtil.m */; };
+		AA2FD1841E6D28E000309E29 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AA2FD1821E6D28E000309E29 /* Podfile */; };
+		AA2FD1851E6D28E000309E29 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = AA2FD1831E6D28E000309E29 /* Podfile.lock */; };
+		AA5C5B021E6D1B5500A84EDF /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AA5C5B011E6D1B5500A84EDF /* alarm.mp3 */; };
+		AAC94C931E6D2EAE00D18AA9 /* team_1_relief_assemble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAC94C8B1E6D2EAE00D18AA9 /* team_1_relief_assemble.mp3 */; };
+		AAC94C941E6D2EAE00D18AA9 /* team_1_relief_in.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAC94C8C1E6D2EAE00D18AA9 /* team_1_relief_in.mp3 */; };
+		AAC94C951E6D2EAE00D18AA9 /* team_2_relief_assemble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAC94C8D1E6D2EAE00D18AA9 /* team_2_relief_assemble.mp3 */; };
+		AAC94C961E6D2EAE00D18AA9 /* team_2_relief_in.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAC94C8E1E6D2EAE00D18AA9 /* team_2_relief_in.mp3 */; };
+		AAC94C971E6D2EAE00D18AA9 /* team_3_relief_assemble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAC94C8F1E6D2EAE00D18AA9 /* team_3_relief_assemble.mp3 */; };
+		AAC94C981E6D2EAE00D18AA9 /* team_3_relief_in.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAC94C901E6D2EAE00D18AA9 /* team_3_relief_in.mp3 */; };
+		AAC94C991E6D2EAE00D18AA9 /* team_4_relief_assemble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAC94C911E6D2EAE00D18AA9 /* team_4_relief_assemble.mp3 */; };
+		AAC94C9A1E6D2EAE00D18AA9 /* team_4_relief_in.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AAC94C921E6D2EAE00D18AA9 /* team_4_relief_in.mp3 */; };
+		BD2F76E1C2C7490D7C1FA4AD /* libPods-SaveTheShoes-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15754D4F454998666A4458B4 /* libPods-SaveTheShoes-tvOSTests.a */; };
+		F32E4C2C4696BFF43C83A9CA /* libPods-SaveTheShoes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68147E4FC60A882072603811 /* libPods-SaveTheShoes.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +119,118 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
+		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
+			remoteInfo = "SaveTheShoes-tvOS";
+		};
+		3DAD3E831DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A283A1D9B042B00D4039D;
+			remoteInfo = "RCTImage-tvOS";
+		};
+		3DAD3E871DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28471D9B043800D4039D;
+			remoteInfo = "RCTLinking-tvOS";
+		};
+		3DAD3E8B1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00C302D31ABCB9D200DB3ED1 /* RCTNetwork.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28541D9B044C00D4039D;
+			remoteInfo = "RCTNetwork-tvOS";
+		};
+		3DAD3E8F1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28611D9B046600D4039D;
+			remoteInfo = "RCTSettings-tvOS";
+		};
+		3DAD3E931DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A287B1D9B048500D4039D;
+			remoteInfo = "RCTText-tvOS";
+		};
+		3DAD3E981DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28881D9B049200D4039D;
+			remoteInfo = "RCTWebSocket-tvOS";
+		};
+		3DAD3EA21DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28131D9B038B00D4039D;
+			remoteInfo = "React-tvOS";
+		};
+		3DAD3EA41DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3C059A1DE3340900C268FA;
+			remoteInfo = yoga;
+		};
+		3DAD3EA61DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3C06751DE3340C00C268FA;
+			remoteInfo = "yoga-tvOS";
+		};
+		3DAD3EA81DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9251DE5FBEC00167DC4;
+			remoteInfo = cxxreact;
+		};
+		3DAD3EAA1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9321DE5FBEE00167DC4;
+			remoteInfo = "cxxreact-tvOS";
+		};
+		3DAD3EAC1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD90B1DE5FBD600167DC4;
+			remoteInfo = jschelpers;
+		};
+		3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D3CD9181DE5FBD800167DC4;
+			remoteInfo = "jschelpers-tvOS";
+		};
+		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTAnimation;
+		};
+		5E9157341DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28201D9B03D100D4039D;
+			remoteInfo = "RCTAnimation-tvOS";
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -113,23 +245,73 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
-		9151D08A1C503579005D8163 /* PBXContainerItemProxy */ = {
+		AA5C5AFF1E6D1AEE00A84EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9151D0851C503579005D8163 /* RNAudioPlayer.xcodeproj */;
+			containerPortal = 0A04023552D54B3489463C66 /* RNSound.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = EBE79C421B01EB5A00446766;
-			remoteInfo = RNAudioPlayer;
+			remoteGlobalIDString = 19825A1E1BD4A89800EE0337;
+			remoteInfo = RNSound;
 		};
-		9151D08C1C503579005D8163 /* PBXContainerItemProxy */ = {
+		AA5C5B2B1E6D1CDE00A84EDF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9151D0851C503579005D8163 /* RNAudioPlayer.xcodeproj */;
+			containerPortal = C052B0DB54EA454AAC41B792 /* RNDeviceInfo.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = EBE79C4D1B01EB5B00446766;
-			remoteInfo = RNAudioPlayerTests;
+			remoteGlobalIDString = DA5891D81BA9A9FC002B4DB2;
+			remoteInfo = RNDeviceInfo;
+		};
+		AAC94C4B1E6D2AB500D18AA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAC94C411E6D2AB500D18AA9 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43C5055B925FD27DD880B3626DCFDF64;
+			remoteInfo = "Pods-SaveTheShoes";
+		};
+		AAC94C4D1E6D2AB500D18AA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAC94C411E6D2AB500D18AA9 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D3A327F01AD76392561911B18AF76A5;
+			remoteInfo = "Pods-SaveTheShoes-tvOS";
+		};
+		AAC94C4F1E6D2AB500D18AA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAC94C411E6D2AB500D18AA9 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D08A7E1C5A8063BD6261F62978A458A2;
+			remoteInfo = "Pods-SaveTheShoes-tvOSTests";
+		};
+		AAC94C511E6D2AB500D18AA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAC94C411E6D2AB500D18AA9 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 47F54DFAFB20FA7C7727526FD92C0112;
+			remoteInfo = "Pods-SaveTheShoesTests";
+		};
+		AAC94C531E6D2AB500D18AA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAC94C411E6D2AB500D18AA9 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0E4E17627113F454714650012822B287;
+			remoteInfo = React;
+		};
+		AAC94C551E6D2AB500D18AA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAC94C411E6D2AB500D18AA9 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78B2901D2FA42C38A613B60148B8E601;
+			remoteInfo = RNDeviceInfo;
+		};
+		AAC94C571E6D2AB500D18AA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AAC94C411E6D2AB500D18AA9 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0D0CB41A46D65E9338AA0C80F6651F3A;
+			remoteInfo = Yoga;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -138,6 +320,7 @@
 		00E356EE1AD99517003FC87E /* SaveTheShoesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveTheShoesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* SaveTheShoesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaveTheShoesTests.m; sourceTree = "<group>"; };
+		0A04023552D54B3489463C66 /* RNSound.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SaveTheShoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveTheShoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,21 +331,38 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SaveTheShoes/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SaveTheShoes/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		15754D4F454998666A4458B4 /* libPods-SaveTheShoes-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SaveTheShoes-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22E834D000AA1D44D46DA400 /* Pods-SaveTheShoes-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveTheShoes-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveTheShoes-tvOS/Pods-SaveTheShoes-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		24793D31640B33EE3D738BE1 /* libPods-SaveTheShoes-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SaveTheShoes-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* SaveTheShoes-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SaveTheShoes-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* SaveTheShoes-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SaveTheShoes-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D94517DFE3BD172CBC8FB56 /* libPods-SaveTheShoesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SaveTheShoesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4880429E7C434D31F4AABD05 /* Pods-SaveTheShoesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveTheShoesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveTheShoesTests/Pods-SaveTheShoesTests.release.xcconfig"; sourceTree = "<group>"; };
+		5C868D4BA4A240F3870CAD17 /* libRNDeviceInfo.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNDeviceInfo.a; sourceTree = "<group>"; };
+		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		5F2990E2ABCA45DCB7CBF8C1 /* libRNSound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSound.a; sourceTree = "<group>"; };
+		68147E4FC60A882072603811 /* libPods-SaveTheShoes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SaveTheShoes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E06BE0427F0ACCC2740B593 /* Pods-SaveTheShoes-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveTheShoes-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveTheShoes-tvOSTests/Pods-SaveTheShoes-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		6EBCBF6F757D47AEBE78F1B0 /* Pods-SaveTheShoesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveTheShoesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveTheShoesTests/Pods-SaveTheShoesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		762310B5BE7DE94E9DB3C0F5 /* Pods-SaveTheShoes-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveTheShoes-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveTheShoes-tvOSTests/Pods-SaveTheShoes-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		9151D0791C503538005D8163 /* node_modules */ = {isa = PBXFileReference; lastKnownFileType = folder; name = node_modules; path = ../node_modules; sourceTree = "<group>"; };
-		9151D0851C503579005D8163 /* RNAudioPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNAudioPlayer.xcodeproj; path = "../node_modules/react-native-audioplayer/RNAudioPlayer.xcodeproj"; sourceTree = "<group>"; };
-		91EE06831C503D33008C6389 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
-		91EE06DE1C5071D1008C6389 /* team_3_relief_in.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_3_relief_in.mp3; sourceTree = "<group>"; };
-		91EE06DF1C5071D1008C6389 /* team_4_relief_assemble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_4_relief_assemble.mp3; sourceTree = "<group>"; };
-		91EE06E01C5071D1008C6389 /* team_4_relief_in.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_4_relief_in.mp3; sourceTree = "<group>"; };
-		91EE06E11C5071D1008C6389 /* team_1_relief_assemble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_1_relief_assemble.mp3; sourceTree = "<group>"; };
-		91EE06E21C5071D1008C6389 /* team_1_relief_in.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_1_relief_in.mp3; sourceTree = "<group>"; };
-		91EE06E31C5071D1008C6389 /* team_2_relief_assemble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_2_relief_assemble.mp3; sourceTree = "<group>"; };
-		91EE06E41C5071D1008C6389 /* team_2_relief_in.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_2_relief_in.mp3; sourceTree = "<group>"; };
-		91EE06E51C5071D1008C6389 /* team_3_relief_assemble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_3_relief_assemble.mp3; sourceTree = "<group>"; };
-		CC7822DE1C50490E00E176BD /* DeviceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceUtil.h; sourceTree = "<group>"; };
-		CC7822DF1C50490F00E176BD /* DeviceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceUtil.m; sourceTree = "<group>"; };
+		AA2FD1821E6D28E000309E29 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		AA2FD1831E6D28E000309E29 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
+		AA5C5B011E6D1B5500A84EDF /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
+		AAC94C411E6D2AB500D18AA9 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		AAC94C8B1E6D2EAE00D18AA9 /* team_1_relief_assemble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_1_relief_assemble.mp3; sourceTree = "<group>"; };
+		AAC94C8C1E6D2EAE00D18AA9 /* team_1_relief_in.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_1_relief_in.mp3; sourceTree = "<group>"; };
+		AAC94C8D1E6D2EAE00D18AA9 /* team_2_relief_assemble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_2_relief_assemble.mp3; sourceTree = "<group>"; };
+		AAC94C8E1E6D2EAE00D18AA9 /* team_2_relief_in.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_2_relief_in.mp3; sourceTree = "<group>"; };
+		AAC94C8F1E6D2EAE00D18AA9 /* team_3_relief_assemble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_3_relief_assemble.mp3; sourceTree = "<group>"; };
+		AAC94C901E6D2EAE00D18AA9 /* team_3_relief_in.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_3_relief_in.mp3; sourceTree = "<group>"; };
+		AAC94C911E6D2EAE00D18AA9 /* team_4_relief_assemble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_4_relief_assemble.mp3; sourceTree = "<group>"; };
+		AAC94C921E6D2EAE00D18AA9 /* team_4_relief_in.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = team_4_relief_in.mp3; sourceTree = "<group>"; };
+		C052B0DB54EA454AAC41B792 /* RNDeviceInfo.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNDeviceInfo.xcodeproj; path = "../node_modules/react-native-device-info/RNDeviceInfo.xcodeproj"; sourceTree = "<group>"; };
+		C3F756E44A401B17F1E99E09 /* Pods-SaveTheShoes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveTheShoes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveTheShoes/Pods-SaveTheShoes.debug.xcconfig"; sourceTree = "<group>"; };
+		E69DC994F775A7D35D2422EF /* Pods-SaveTheShoes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveTheShoes.release.xcconfig"; path = "Pods/Target Support Files/Pods-SaveTheShoes/Pods-SaveTheShoes.release.xcconfig"; sourceTree = "<group>"; };
+		FD97B6B8E79922900E507B39 /* Pods-SaveTheShoes-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveTheShoes-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SaveTheShoes-tvOS/Pods-SaveTheShoes-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +370,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
+				078862054CA1EB3CA8CF84C8 /* libPods-SaveTheShoesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +379,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9151D08E1C5035A5005D8163 /* libRNAudioPlayer.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
+				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
@@ -188,6 +390,33 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
+				2D6C6AF080BD4F43A0E14F42 /* libRNSound.a in Frameworks */,
+				239BF013B33E4919A3784F7B /* libRNDeviceInfo.a in Frameworks */,
+				F32E4C2C4696BFF43C83A9CA /* libPods-SaveTheShoes.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4781E0B4A5D006451C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D02E4C91E0B4AEC006451C7 /* libReact.a in Frameworks */,
+				2D02E4C21E0B4AEC006451C7 /* libRCTAnimation-tvOS.a in Frameworks */,
+				2D02E4C31E0B4AEC006451C7 /* libRCTImage-tvOS.a in Frameworks */,
+				2D02E4C41E0B4AEC006451C7 /* libRCTLinking-tvOS.a in Frameworks */,
+				2D02E4C51E0B4AEC006451C7 /* libRCTNetwork-tvOS.a in Frameworks */,
+				2D02E4C61E0B4AEC006451C7 /* libRCTSettings-tvOS.a in Frameworks */,
+				2D02E4C71E0B4AEC006451C7 /* libRCTText-tvOS.a in Frameworks */,
+				2D02E4C81E0B4AEC006451C7 /* libRCTWebSocket-tvOS.a in Frameworks */,
+				5A439C85ED53F829D76665DA /* libPods-SaveTheShoes-tvOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48D1E0B4A5D006451C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD2F76E1C2C7490D7C1FA4AD /* libPods-SaveTheShoes-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				00C302C01ABCB91800DB3ED1 /* libRCTImage.a */,
+				3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,6 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */,
+				3DAD3E8C1DF850E9000B6D8A /* libRCTNetwork-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				139105C11AF99BAD00B5F7CC /* libRCTSettings.a */,
+				3DAD3E901DF850E9000B6D8A /* libRCTSettings-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				139FDEF41B06529B00C62182 /* libRCTWebSocket.a */,
+				3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -270,15 +503,18 @@
 		13B07FAE1A68108700A75B9A /* SaveTheShoes */ = {
 			isa = PBXGroup;
 			children = (
-				91EE06DE1C5071D1008C6389 /* team_3_relief_in.mp3 */,
-				91EE06DF1C5071D1008C6389 /* team_4_relief_assemble.mp3 */,
-				91EE06E01C5071D1008C6389 /* team_4_relief_in.mp3 */,
-				91EE06E11C5071D1008C6389 /* team_1_relief_assemble.mp3 */,
-				91EE06E21C5071D1008C6389 /* team_1_relief_in.mp3 */,
-				91EE06E31C5071D1008C6389 /* team_2_relief_assemble.mp3 */,
-				91EE06E41C5071D1008C6389 /* team_2_relief_in.mp3 */,
-				91EE06E51C5071D1008C6389 /* team_3_relief_assemble.mp3 */,
-				91EE06831C503D33008C6389 /* alarm.mp3 */,
+				AAC94C8B1E6D2EAE00D18AA9 /* team_1_relief_assemble.mp3 */,
+				AAC94C8C1E6D2EAE00D18AA9 /* team_1_relief_in.mp3 */,
+				AAC94C8D1E6D2EAE00D18AA9 /* team_2_relief_assemble.mp3 */,
+				AAC94C8E1E6D2EAE00D18AA9 /* team_2_relief_in.mp3 */,
+				AAC94C8F1E6D2EAE00D18AA9 /* team_3_relief_assemble.mp3 */,
+				AAC94C901E6D2EAE00D18AA9 /* team_3_relief_in.mp3 */,
+				AAC94C911E6D2EAE00D18AA9 /* team_4_relief_assemble.mp3 */,
+				AAC94C921E6D2EAE00D18AA9 /* team_4_relief_in.mp3 */,
+				AA2FD1821E6D28E000309E29 /* Podfile */,
+				AA2FD1831E6D28E000309E29 /* Podfile.lock */,
+				AA5C5B011E6D1B5500A84EDF /* alarm.mp3 */,
+				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -293,6 +529,49 @@
 			isa = PBXGroup;
 			children = (
 				146834041AC3E56700842450 /* libReact.a */,
+				3DAD3EA31DF850E9000B6D8A /* libReact.a */,
+				3DAD3EA51DF850E9000B6D8A /* libyoga.a */,
+				3DAD3EA71DF850E9000B6D8A /* libyoga.a */,
+				3DAD3EA91DF850E9000B6D8A /* libcxxreact.a */,
+				3DAD3EAB1DF850E9000B6D8A /* libcxxreact.a */,
+				3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */,
+				3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		158407E3831DBC797B7B1AE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3F756E44A401B17F1E99E09 /* Pods-SaveTheShoes.debug.xcconfig */,
+				E69DC994F775A7D35D2422EF /* Pods-SaveTheShoes.release.xcconfig */,
+				FD97B6B8E79922900E507B39 /* Pods-SaveTheShoes-tvOS.debug.xcconfig */,
+				22E834D000AA1D44D46DA400 /* Pods-SaveTheShoes-tvOS.release.xcconfig */,
+				762310B5BE7DE94E9DB3C0F5 /* Pods-SaveTheShoes-tvOSTests.debug.xcconfig */,
+				6E06BE0427F0ACCC2740B593 /* Pods-SaveTheShoes-tvOSTests.release.xcconfig */,
+				6EBCBF6F757D47AEBE78F1B0 /* Pods-SaveTheShoesTests.debug.xcconfig */,
+				4880429E7C434D31F4AABD05 /* Pods-SaveTheShoesTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		44EB21F9B375A325A01185E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAC94C411E6D2AB500D18AA9 /* Pods.xcodeproj */,
+				68147E4FC60A882072603811 /* libPods-SaveTheShoes.a */,
+				24793D31640B33EE3D738BE1 /* libPods-SaveTheShoes-tvOS.a */,
+				15754D4F454998666A4458B4 /* libPods-SaveTheShoes-tvOSTests.a */,
+				2D94517DFE3BD172CBC8FB56 /* libPods-SaveTheShoesTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */,
+				5E9157351DD0AC6500FF2AA8 /* libRCTAnimation-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -301,6 +580,7 @@
 			isa = PBXGroup;
 			children = (
 				78C398B91ACF4ADC00677621 /* libRCTLinking.a */,
+				3DAD3E881DF850E9000B6D8A /* libRCTLinking-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -308,6 +588,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -318,6 +599,8 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				0A04023552D54B3489463C66 /* RNSound.xcodeproj */,
+				C052B0DB54EA454AAC41B792 /* RNDeviceInfo.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -326,6 +609,7 @@
 			isa = PBXGroup;
 			children = (
 				832341B51AAA6A8300B99B32 /* libRCTText.a */,
+				3DAD3E941DF850E9000B6D8A /* libRCTText-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -333,14 +617,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				CC7822DE1C50490E00E176BD /* DeviceUtil.h */,
-				CC7822DF1C50490F00E176BD /* DeviceUtil.m */,
-				9151D0851C503579005D8163 /* RNAudioPlayer.xcodeproj */,
-				9151D0791C503538005D8163 /* node_modules */,
 				13B07FAE1A68108700A75B9A /* SaveTheShoes */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* SaveTheShoesTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				158407E3831DBC797B7B1AE3 /* Pods */,
+				44EB21F9B375A325A01185E4 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -351,15 +633,38 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* SaveTheShoes.app */,
 				00E356EE1AD99517003FC87E /* SaveTheShoesTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* SaveTheShoes-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* SaveTheShoes-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9151D0861C503579005D8163 /* Products */ = {
+		AA5C5AE31E6D1AEE00A84EDF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9151D08B1C503579005D8163 /* libRNAudioPlayer.a */,
-				9151D08D1C503579005D8163 /* RNAudioPlayerTests.xctest */,
+				AA5C5B001E6D1AEE00A84EDF /* libRNSound.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA5C5B0F1E6D1CDE00A84EDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA5C5B2C1E6D1CDE00A84EDF /* libRNDeviceInfo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AAC94C421E6D2AB500D18AA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AAC94C4C1E6D2AB500D18AA9 /* libPods-SaveTheShoes.a */,
+				AAC94C4E1E6D2AB500D18AA9 /* libPods-SaveTheShoes-tvOS.a */,
+				AAC94C501E6D2AB500D18AA9 /* libPods-SaveTheShoes-tvOSTests.a */,
+				AAC94C521E6D2AB500D18AA9 /* libPods-SaveTheShoesTests.a */,
+				AAC94C541E6D2AB500D18AA9 /* libReact.a */,
+				AAC94C561E6D2AB500D18AA9 /* libRNDeviceInfo.a */,
+				AAC94C581E6D2AB500D18AA9 /* libYoga.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -371,9 +676,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SaveTheShoesTests" */;
 			buildPhases = (
+				38F7FE93899C464AE7F28887 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				F9A72AF667763C8E8665CF5F /* [CP] Embed Pods Frameworks */,
+				126FF782F02F518CC36F614A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -389,11 +697,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SaveTheShoes" */;
 			buildPhases = (
+				0549F2FF92BC445D8D190F3F /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				9166EA381C50339C0028D4A0 /* ShellScript */,
+				3C25A5E1F3306E24342CC4E3 /* [CP] Embed Pods Frameworks */,
+				8ED43B8E9BA33CB37D923CA0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -404,18 +714,69 @@
 			productReference = 13B07F961A680F5B00A75B9A /* SaveTheShoes.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2D02E47A1E0B4A5D006451C7 /* SaveTheShoes-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SaveTheShoes-tvOS" */;
+			buildPhases = (
+				D8DE497137AA19FBFAE21355 /* [CP] Check Pods Manifest.lock */,
+				2D02E4771E0B4A5D006451C7 /* Sources */,
+				2D02E4781E0B4A5D006451C7 /* Frameworks */,
+				2D02E4791E0B4A5D006451C7 /* Resources */,
+				2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */,
+				DDBE8C65AFF2E3B602CAB23E /* [CP] Embed Pods Frameworks */,
+				BBF26E79F0086C305B45F80F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SaveTheShoes-tvOS";
+			productName = "SaveTheShoes-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* SaveTheShoes-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2D02E48F1E0B4A5D006451C7 /* SaveTheShoes-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SaveTheShoes-tvOSTests" */;
+			buildPhases = (
+				7BB3DE923A3519F460650502 /* [CP] Check Pods Manifest.lock */,
+				2D02E48C1E0B4A5D006451C7 /* Sources */,
+				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
+				2D02E48E1E0B4A5D006451C7 /* Resources */,
+				99F1D11A5ABD48F1B8984B9E /* [CP] Embed Pods Frameworks */,
+				5D7A3FE8D82D231B915A94F1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
+			);
+			name = "SaveTheShoes-tvOSTests";
+			productName = "SaveTheShoes-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* SaveTheShoes-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					2D02E47A1E0B4A5D006451C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					2D02E48F1E0B4A5D006451C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
 				};
 			};
@@ -432,8 +793,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = AAC94C421E6D2AB500D18AA9 /* Products */;
+					ProjectRef = AAC94C411E6D2AB500D18AA9 /* Pods.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
+				},
+				{
+					ProductGroup = 5E91572E1DD0AC6500FF2AA8 /* Products */;
+					ProjectRef = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302B61ABCB90400DB3ED1 /* Products */;
@@ -472,14 +841,20 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 9151D0861C503579005D8163 /* Products */;
-					ProjectRef = 9151D0851C503579005D8163 /* RNAudioPlayer.xcodeproj */;
+					ProductGroup = AA5C5B0F1E6D1CDE00A84EDF /* Products */;
+					ProjectRef = C052B0DB54EA454AAC41B792 /* RNDeviceInfo.xcodeproj */;
+				},
+				{
+					ProductGroup = AA5C5AE31E6D1AEE00A84EDF /* Products */;
+					ProjectRef = 0A04023552D54B3489463C66 /* RNSound.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* SaveTheShoes */,
 				00E356ED1AD99517003FC87E /* SaveTheShoesTests */,
+				2D02E47A1E0B4A5D006451C7 /* SaveTheShoes-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* SaveTheShoes-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -541,6 +916,111 @@
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		3DAD3E841DF850E9000B6D8A /* libRCTImage-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTImage-tvOS.a";
+			remoteRef = 3DAD3E831DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3E881DF850E9000B6D8A /* libRCTLinking-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTLinking-tvOS.a";
+			remoteRef = 3DAD3E871DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3E8C1DF850E9000B6D8A /* libRCTNetwork-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTNetwork-tvOS.a";
+			remoteRef = 3DAD3E8B1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3E901DF850E9000B6D8A /* libRCTSettings-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTSettings-tvOS.a";
+			remoteRef = 3DAD3E8F1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3E941DF850E9000B6D8A /* libRCTText-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTText-tvOS.a";
+			remoteRef = 3DAD3E931DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3E991DF850E9000B6D8A /* libRCTWebSocket-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTWebSocket-tvOS.a";
+			remoteRef = 3DAD3E981DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EA31DF850E9000B6D8A /* libReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReact.a;
+			remoteRef = 3DAD3EA21DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EA51DF850E9000B6D8A /* libyoga.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libyoga.a;
+			remoteRef = 3DAD3EA41DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EA71DF850E9000B6D8A /* libyoga.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libyoga.a;
+			remoteRef = 3DAD3EA61DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EA91DF850E9000B6D8A /* libcxxreact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcxxreact.a;
+			remoteRef = 3DAD3EA81DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EAB1DF850E9000B6D8A /* libcxxreact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcxxreact.a;
+			remoteRef = 3DAD3EAA1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EAD1DF850E9000B6D8A /* libjschelpers.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjschelpers.a;
+			remoteRef = 3DAD3EAC1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3DAD3EAF1DF850E9000B6D8A /* libjschelpers.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libjschelpers.a;
+			remoteRef = 3DAD3EAE1DF850E9000B6D8A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTAnimation.a;
+			remoteRef = 5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5E9157351DD0AC6500FF2AA8 /* libRCTAnimation-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTAnimation-tvOS.a";
+			remoteRef = 5E9157341DD0AC6500FF2AA8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -555,18 +1035,67 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9151D08B1C503579005D8163 /* libRNAudioPlayer.a */ = {
+		AA5C5B001E6D1AEE00A84EDF /* libRNSound.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libRNAudioPlayer.a;
-			remoteRef = 9151D08A1C503579005D8163 /* PBXContainerItemProxy */;
+			path = libRNSound.a;
+			remoteRef = AA5C5AFF1E6D1AEE00A84EDF /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		9151D08D1C503579005D8163 /* RNAudioPlayerTests.xctest */ = {
+		AA5C5B2C1E6D1CDE00A84EDF /* libRNDeviceInfo.a */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RNAudioPlayerTests.xctest;
-			remoteRef = 9151D08C1C503579005D8163 /* PBXContainerItemProxy */;
+			fileType = archive.ar;
+			path = libRNDeviceInfo.a;
+			remoteRef = AA5C5B2B1E6D1CDE00A84EDF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAC94C4C1E6D2AB500D18AA9 /* libPods-SaveTheShoes.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-SaveTheShoes.a";
+			remoteRef = AAC94C4B1E6D2AB500D18AA9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAC94C4E1E6D2AB500D18AA9 /* libPods-SaveTheShoes-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-SaveTheShoes-tvOS.a";
+			remoteRef = AAC94C4D1E6D2AB500D18AA9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAC94C501E6D2AB500D18AA9 /* libPods-SaveTheShoes-tvOSTests.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-SaveTheShoes-tvOSTests.a";
+			remoteRef = AAC94C4F1E6D2AB500D18AA9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAC94C521E6D2AB500D18AA9 /* libPods-SaveTheShoesTests.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-SaveTheShoesTests.a";
+			remoteRef = AAC94C511E6D2AB500D18AA9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAC94C541E6D2AB500D18AA9 /* libReact.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReact.a;
+			remoteRef = AAC94C531E6D2AB500D18AA9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAC94C561E6D2AB500D18AA9 /* libRNDeviceInfo.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNDeviceInfo.a;
+			remoteRef = AAC94C551E6D2AB500D18AA9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		AAC94C581E6D2AB500D18AA9 /* libYoga.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libYoga.a;
+			remoteRef = AAC94C571E6D2AB500D18AA9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -583,17 +1112,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91EE06E91C5071D1008C6389 /* team_1_relief_assemble.mp3 in Resources */,
-				91EE06EC1C5071D1008C6389 /* team_2_relief_in.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				91EE06E71C5071D1008C6389 /* team_4_relief_assemble.mp3 in Resources */,
-				91EE06EB1C5071D1008C6389 /* team_2_relief_assemble.mp3 in Resources */,
-				91EE06E61C5071D1008C6389 /* team_3_relief_in.mp3 in Resources */,
-				91EE06ED1C5071D1008C6389 /* team_3_relief_assemble.mp3 in Resources */,
-				91EE06EA1C5071D1008C6389 /* team_1_relief_in.mp3 in Resources */,
+				AAC94C9A1E6D2EAE00D18AA9 /* team_4_relief_in.mp3 in Resources */,
+				AAC94C951E6D2EAE00D18AA9 /* team_2_relief_assemble.mp3 in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				91EE06861C503D33008C6389 /* alarm.mp3 in Resources */,
-				91EE06E81C5071D1008C6389 /* team_4_relief_in.mp3 in Resources */,
+				AAC94C931E6D2EAE00D18AA9 /* team_1_relief_assemble.mp3 in Resources */,
+				AA2FD1851E6D28E000309E29 /* Podfile.lock in Resources */,
+				AAC94C941E6D2EAE00D18AA9 /* team_1_relief_in.mp3 in Resources */,
+				AA2FD1841E6D28E000309E29 /* Podfile in Resources */,
+				AAC94C991E6D2EAE00D18AA9 /* team_4_relief_assemble.mp3 in Resources */,
+				AA5C5B021E6D1B5500A84EDF /* alarm.mp3 in Resources */,
+				AAC94C971E6D2EAE00D18AA9 /* team_3_relief_assemble.mp3 in Resources */,
+				AAC94C961E6D2EAE00D18AA9 /* team_2_relief_in.mp3 in Resources */,
+				AAC94C981E6D2EAE00D18AA9 /* team_3_relief_in.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4791E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,20 +1158,201 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../node_modules/react-native/packager/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
-		9166EA381C50339C0028D4A0 /* ShellScript */ = {
+		0549F2FF92BC445D8D190F3F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "../node_modules/react-native/packager/react-native-xcode.sh";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		126FF782F02F518CC36F614A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveTheShoesTests/Pods-SaveTheShoesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
+		};
+		38F7FE93899C464AE7F28887 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3C25A5E1F3306E24342CC4E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveTheShoes/Pods-SaveTheShoes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D7A3FE8D82D231B915A94F1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveTheShoes-tvOSTests/Pods-SaveTheShoes-tvOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BB3DE923A3519F460650502 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8ED43B8E9BA33CB37D923CA0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveTheShoes/Pods-SaveTheShoes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99F1D11A5ABD48F1B8984B9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveTheShoes-tvOSTests/Pods-SaveTheShoes-tvOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBF26E79F0086C305B45F80F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveTheShoes-tvOS/Pods-SaveTheShoes-tvOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8DE497137AA19FBFAE21355 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DDBE8C65AFF2E3B602CAB23E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveTheShoes-tvOS/Pods-SaveTheShoes-tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9A72AF667763C8E8665CF5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SaveTheShoesTests/Pods-SaveTheShoesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -642,9 +1369,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC7822E01C50491000E176BD /* DeviceUtil.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4771E0B4A5D006451C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
+				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48C1E0B4A5D006451C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DCD954D1E0B4F2C00145EB5 /* SaveTheShoesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +1398,11 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* SaveTheShoes */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D02E47A1E0B4A5D006451C7 /* SaveTheShoes-tvOS */;
+			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -673,19 +1421,31 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EBCBF6F757D47AEBE78F1B0 /* Pods-SaveTheShoesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
+				);
 				INFOPLIST_FILE = SaveTheShoesTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaveTheShoes.app/SaveTheShoes";
 			};
@@ -693,16 +1453,28 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4880429E7C434D31F4AABD05 /* Pods-SaveTheShoesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 				);
 				INFOPLIST_FILE = SaveTheShoesTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaveTheShoes.app/SaveTheShoes";
 			};
@@ -710,36 +1482,178 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3F756E44A401B17F1E99E09 /* Pods-SaveTheShoes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 				);
 				INFOPLIST_FILE = SaveTheShoes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SaveTheShoes;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E69DC994F775A7D35D2422EF /* Pods-SaveTheShoes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 1;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
 				);
 				INFOPLIST_FILE = SaveTheShoes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = SaveTheShoes;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		2D02E4971E0B4A5E006451C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD97B6B8E79922900E507B39 /* Pods-SaveTheShoes-tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
+				);
+				INFOPLIST_FILE = "SaveTheShoes-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SaveTheShoes-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		2D02E4981E0B4A5E006451C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22E834D000AA1D44D46DA400 /* Pods-SaveTheShoes-tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
+					"$(SRCROOT)/../node_modules/react-native-device-info/RNDeviceInfo",
+				);
+				INFOPLIST_FILE = "SaveTheShoes-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SaveTheShoes-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		2D02E4991E0B4A5E006451C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 762310B5BE7DE94E9DB3C0F5 /* Pods-SaveTheShoes-tvOSTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "SaveTheShoes-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SaveTheShoes-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaveTheShoes-tvOS.app/SaveTheShoes-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Debug;
+		};
+		2D02E49A1E0B4A5E006451C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E06BE0427F0ACCC2740B593 /* Pods-SaveTheShoes-tvOSTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "SaveTheShoes-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.SaveTheShoes-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SaveTheShoes-tvOS.app/SaveTheShoes-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
 		};
@@ -756,15 +1670,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -777,12 +1695,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../node_modules/react-native/React/**",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -802,8 +1715,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -811,18 +1726,14 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(SRCROOT)/../node_modules/react-native/React/**",
-				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -846,6 +1757,24 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SaveTheShoes-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D02E4971E0B4A5E006451C7 /* Debug */,
+				2D02E4981E0B4A5E006451C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SaveTheShoes-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D02E4991E0B4A5E006451C7 /* Debug */,
+				2D02E49A1E0B4A5E006451C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

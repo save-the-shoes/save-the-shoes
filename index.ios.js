@@ -1,16 +1,8 @@
 /* @flow */
 'use strict';
 
-let React = require('react-native');
-let Moment = require('moment');
-let TimerMixin = require('react-native-timer-mixin');
-let AudioPlayer = require('react-native-audioplayer');
-let Device = require('react-native-device');
-let _ = require('lodash');
-
-let formatTime = require('./common/format-time');
-
-let {
+import React from 'react';
+import {
   AppRegistry,
   PickerIOS,
   Text,
@@ -18,7 +10,18 @@ let {
   TouchableHighlight,
   AlertIOS,
   PushNotificationIOS
-} = React;
+} from 'react-native';
+
+let Moment = require('moment');
+let TimerMixin = require('react-native-timer-mixin');
+let Sound = require('react-native-sound');
+let Device = require('react-native-device-info');
+let _ = require('lodash');
+
+let formatTime = require('./common/format-time');
+
+// Play even when silenced
+Sound.setCategory('Playback');
 
 
 let PickerItemIOS = PickerIOS.Item;
@@ -174,7 +177,9 @@ let TeamTimer = React.createClass({
           alarmsRemaining: this.state.alarmsRemaining.filter((_, i) => i !== 0)
         })
 
-        AudioPlayer.play(currentAlarm.alarmSound);
+        const sound = new Sound(currentAlarm.alarmSound, Sound.MAIN_BUNDLE, (err) => {
+          sound.play();
+        });
 
         if(currentAlarm.offset == 0){
           // Final alarm (time due out), display popup
@@ -305,7 +310,7 @@ let TimeBox = React.createClass({
 
 let SaveTheShoes = React.createClass({
   render: function() {
-    if (Device.isIpad()) {
+    if (Device.isTablet()) {
       return (
         <View style={{flex: 1, flexDirection: 'row'}} horizontal={true}>
           <TeamTimer teamNumber={1}/>
