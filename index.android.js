@@ -23,7 +23,7 @@ let SaveTheShoes = React.createClass({
 
   getInitialState: function() {
     return {
-      barPressure: 110
+      barPressure: 150
     };
   },
 
@@ -101,7 +101,7 @@ let SaveTheShoes = React.createClass({
 
   backFromTimerScreen: function() {
     this.setState({displayTimerScreen: false});
-    this.setState({barPressure: 110});
+    this.setState({barPressure: 150});
   },
 
   modeDisplay: function() {

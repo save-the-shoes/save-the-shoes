@@ -113,7 +113,7 @@ let TeamTimer = React.createClass({
 
   getInitialState: function() {
     return {
-      barPressure: '110',
+      barPressure: '150',
       timerRunning: false,
       inTime: null,
       timeRemaining: Moment.duration(0),

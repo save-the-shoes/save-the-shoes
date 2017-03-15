@@ -1,84 +1,68 @@
 let PRESSURES_AND_MINUTES = {
   '300': {
     bar: 300,
-    minutes: 51,
+    minutes: 36,
   },
   '290': {
     bar: 290,
-    minutes: 49,
+    minutes: 35,
   },
   '280': {
     bar: 280,
-    minutes: 47,
+    minutes: 33,
   },
   '270': {
     bar: 270,
-    minutes: 45,
+    minutes: 32,
   },
   '260': {
     bar: 260,
-    minutes: 44,
+    minutes: 30,
   },
   '250': {
     bar: 250,
-    minutes: 42,
+    minutes: 29,
   },
   '240': {
     bar: 240,
-    minutes: 40,
+    minutes: 27,
   },
   '230': {
     bar: 230,
-    minutes: 38,
+    minutes: 26,
   },
   '220': {
     bar: 220,
-    minutes: 36,
+    minutes: 24,
   },
   '210': {
     bar: 210,
-    minutes: 34,
+    minutes: 23,
   },
   '200': {
     bar: 200,
-    minutes: 33,
+    minutes: 21,
   },
   '190': {
     bar: 190,
-    minutes: 31,
+    minutes: 20,
   },
   '180': {
     bar: 180,
-    minutes: 29,
+    minutes: 18,
   },
   '170': {
     bar: 170,
-    minutes: 27,
+    minutes: 17,
   },
   '160': {
     bar: 160,
-    minutes: 25,
+    minutes: 15,
   },
   '150': {
     bar: 150,
-    minutes: 23,
-  },
-  '140': {
-    bar: 140,
-    minutes: 21,
-  },
-  '130': {
-    bar: 130,
-    minutes: 19,
-  },
-  '120': {
-    bar: 120,
-    minutes: 17,
-  },
-  '110': {
-    bar: 110,
-    minutes: 15,
-  },
+    minutes: 14,
+  }
 };
 
 module.exports = PRESSURES_AND_MINUTES;
